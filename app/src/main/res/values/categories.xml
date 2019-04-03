@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="categories">
-        <item>אוכל</item>
+        <item name="food_category">אוכל</item>
         <item>שתיה</item>
         <item>מוזיקה</item>
     </string-array>
