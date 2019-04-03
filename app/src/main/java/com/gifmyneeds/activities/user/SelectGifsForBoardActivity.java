@@ -7,10 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import com.gifmyneeds.R;
 import com.gifmyneeds.models.ChildGifs;
 
+import java.util.ArrayList;
+
 public class SelectGifsForBoardActivity extends AppCompatActivity {
 
     private  ChildGifs childGifs;
-
+    //Gif from res
+    //String gifPath = findViewById("")
 
 
     @Override
@@ -25,8 +28,14 @@ public class SelectGifsForBoardActivity extends AppCompatActivity {
         Intent incomingIntent = getIntent();
         //String value = incomingIntent.getStringExtra("key");
         childGifs = (ChildGifs) incomingIntent.getSerializableExtra("category");
+        getGifsByCategory(childGifs.getCategory());
 
 
 
+    }
+
+    private ArrayList<String> getGifsByCategory(String category){
+
+        return null;
     }
 }
