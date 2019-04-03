@@ -1,98 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:id="@+id/buttonVideo1"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:background="@android:color/transparent"
-            />
+    <Button
+        android:id="@+id/buttonVideo1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/transparent" />
 
-        <VideoView
-            android:layout_width="212dp"
-            android:layout_height="200dp"
-            android:id="@+id/videoView1"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal = "true"
+    <Button
+        android:id="@+id/buttonVideo2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/transparent" />
 
-            />
+    <Button
+        android:id="@+id/buttonVideo3"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/transparent" />
 
+    <Button
+        android:id="@+id/buttonVideo4"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/transparent" />
 
+    <Button
+        android:id="@+id/buttonVideo5"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/transparent" />
 
-        <VideoView
-            android:id="@+id/videoView2"
-            android:layout_width="212dp"
-            android:layout_height="200dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+    <Button
+        android:id="@+id/buttonVideo6"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="211dp"
+        android:layout_marginTop="526dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent" />
 
-            />
+    <VideoView
+        android:id="@+id/videoView2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
 
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <VideoView
-            android:layout_width="212dp"
-            android:layout_height="200dp"
-            android:id="@+id/videoView3"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal = "true"
-
-            />
-
-        <VideoView
-            android:id="@+id/videoView4"
-            android:layout_width="212dp"
-            android:layout_height="200dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-
-            />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <VideoView
-            android:layout_width="212dp"
-            android:layout_height="200dp"
-            android:id="@+id/videoView5"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal = "true"
-
-            />
-
-        <VideoView
-            android:id="@+id/videoView6"
-            android:layout_width="212dp"
-            android:layout_height="200dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-
-            />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="529dp" />
 
 
-    </LinearLayout>
+    <VideoView
+        android:id="@+id/videoView1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        android:layout_alignEnd="@+id/videoView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="202dp"
+        android:layout_marginBottom="529dp" />
+
+
+    <VideoView
+        android:id="@+id/videoView3"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="266dp"
+        android:layout_marginEnd="206dp" />
+
+    <VideoView
+        android:id="@+id/videoView4"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="267dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="265dp" />
+
+
+    <VideoView
+        android:id="@+id/videoView6"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp" />
+
+    <VideoView
+        android:id="@+id/videoView5"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="205dp"
+        android:layout_marginBottom="1dp" />
 
 
 
@@ -103,4 +159,5 @@
 
 
 
-</LinearLayout>
+
+</RelativeLayout>
