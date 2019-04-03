@@ -56,6 +56,12 @@
     <string name="signup">הרשמה</string>
     <string name="sign_up_here">אין לך משתמש עדיין? הירשם כאן!</string>
     <string name="disclaimer">האפליקציה (“GifMyNeeds”) היא באחריות המשתמש בלבד, היא איננה רפואית או טיפולית ואין להתייחס אליה ככזו על ידי המשתמש. כמו כן, אין להסתמך על אפליקציה זו לצורך דיאגנוזה רפואית או כהמלצה לטיפול רפואי כלשהו. השירות הניתן באפליקציה זו לא מהווה תחליף לחוות דעת ומעקב מומחה בתחום, דיאגנוזה או טיפול. כל התוכן, כולל טקסט, גרפיקה, תמונות ואינפורמציה הנמצא באפליקציה או זמין דרכה מיועד לצורך מידע כללי בלבד.</string>
+    <string name="age_text">גיל:</string>
+    <string name="ID_text">ת.ז:</string>
+    <string name="name_text">שם:</string>
+    <string name="child_details_text">פרטי הילד:</string>
+    <string name="gender_text">מגדר:</string>
+    <string name="no_selected_child">לא נבחר ילד</string>
     <string-array name="genderList">
         <item>זכר</item>
         <item>נקבה</item>
