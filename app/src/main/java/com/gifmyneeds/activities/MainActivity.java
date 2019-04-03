@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.gifmyneeds.R;
+import com.gifmyneeds.activities.child.GifBoardActivity;
 import com.gifmyneeds.activities.user.SelectCategoryForBoardActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -28,6 +29,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        Intent in = new Intent(this, GifBoardActivity.class);
+        startActivity(in);
 
         signinBtn = (Button) findViewById(R.id.signinBtn);
         signupBtn = (Button) findViewById(R.id.signupBtn);
