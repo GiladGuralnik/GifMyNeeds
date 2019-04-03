@@ -1,11 +1,12 @@
 package com.gifmyneeds.dao;
 
+import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
+import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.Query;
+
 import com.gifmyneeds.models.User;
 import java.util.List;
-import androidx.room.Dao;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.Query;
 
 @Dao
 public interface UserDao {
