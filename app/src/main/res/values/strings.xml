@@ -1,4 +1,64 @@
 <resources>
-    <string name="app_name">GifMyNeeds</string>
-    <string name="action_settings">Settings</string>
+    <string name="hello">שלום</string>
+    <string name="app_name">Funtestic</string>
+    <string name="number_of_question_1">שאלה 1</string>
+    <string name="number_of_question_2">שאלה 2</string>
+    <string name="number_of_question_3">שאלה 3</string>
+    <string name="number_of_question_4">שאלה 4</string>
+    <string name="number_of_question_5">שאלה 5</string>
+    <string name="number_of_question_6">שאלה 6</string>
+    <string name="number_of_question_7">שאלה 7</string>
+    <string name="number_of_question_8">שאלה 8</string>
+    <string name="number_of_question_9">שאלה 9</string>
+    <string name="number_of_question_10">שאלה 10</string>
+    <string name="number_of_question_11">שאלה 11</string>
+    <string name="number_of_question_12">שאלה 12</string>
+    <string name="number_of_question_13">שאלה 13</string>
+    <string name="question_1">האם הילד שלך חווה קשיים להבין כיצד אנשים סביבו מרגישים בעת שיחה ?</string>
+    <string name="question_2">האם הילד שלך מתקשה לעבוד ולהתנהל עם קבוצה ?</string>
+    <string name="question_3">האם הילד שלך מתקשה לפתח קשרים חברתיים עם ילדים אחרים ?</string>
+    <string name="question_4">האם הילד שלך נעשה עצבני, חסר סבלנות או חוסם את אוזניו כאשר יש רעשי סביבה (למשל אנשים שמדברים בקול רם) ?</string>
+    <string name="question_5">האם הילד שלך נעשה עצבני כאשר שגרת היום לה היה רגיל השתנתה לפתע ?</string>
+    <string name="question_6">האם הילד שלך מדבר לאט מאוד ונותן תשובות לא קשורות לשאלות ?</string>
+    <string name="question_7">האם הילד שלך לא מגיב כאשר קוראים בשמו או נמנע מקשר עין ?</string>
+    <string name="question_8">האם הילד שלך לא משחק במשחקי העמדת פנים עם ילדים אחרים ?</string>
+    <string name="question_9">האם לילד שלך יש הרגלים אובססיביים לדבר מסוים ?</string>
+    <string name="question_10">האם הילד שלך רגיש לריחות, טעם או מגע? (למשל נעשה מאוד עצבני בעקבות מגע או ריח מסוים)</string>
+    <string name="question_11">האם הילד שלך מתחמק ממגע פיזי ?</string>
+    <string name="question_12">האם הילד שלך מציג מודעות נמוכה למצבים מסוכנים ?</string>
+    <string name="question_13">האם הילד שלך מתנהג בצורה שאינה מנומסת? (חסר טאקט)</string>
+    <string name="answer_1">לעולם לא</string>
+    <string name="answer_2">לעיתים נדירות</string>
+    <string name="answer_3">לפעמים</string>
+    <string name="answer_4">לעיתים קרובות</string>
+    <string name="answer_5">לעיתים קרובות מאוד</string>
+    <string name="next">הבא</string>
+    <string name="previous">הקודם</string>
+    <string name="end_quiz">סיים ושלח</string>
+    <string name="name">שם:</string>
+    <string name="ID">ת.ז.:</string>
+    <string name="age">גיל:</string>
+    <string name="gender">מגדר:</string>
+    <string name="child_details">פרטי הילד:</string>
+    <string name="submit">הוספה</string>
+    <string name="enter_name">הזן את שם הילד כאן</string>
+    <string name="enter_id">הזן את מספר הזהות כאן</string>
+    <string name="enter_age">הזן את גיל הילד כאן</string>
+    <string name="add_child">הוספת ילד חדש</string>
+    <string name="select_child">בחירת ילד</string>
+    <string name="enter_password">אנא הזן סיסמא</string>
+    <string name="password_too_short">הסיסמא שהזנת קצרה מידיי</string>
+    <string name="enter_email">אנא הזן מייל</string>
+    <string name="email_not_valid">המייל שהזנת לא חוקי</string>
+    <string name="checking_user_details">בודק פרטי משתמש אנא המתן...</string>
+    <string name="enter_username">אנא הכנס שם משתמש</string>
+    <string name="login">התחברות</string>
+    <string name="signup">הרשמה</string>
+    <string name="sign_up_here">אין לך משתמש עדיין? הירשם כאן!</string>
+    <string name="disclaimer">האפליקציה (“Funtestic”) מספקת אינפורמציה בלבד, היא איננה רפואית או טיפולית ואין להתייחס אליה ככזו על ידי המשתמש. כמו כן, אין להסתמך על אפליקציה זו לצורך דיאגנוזה רפואית או כהמלצה לטיפול רפואי כלשהו. האינפורמציה הניתנת באפליקציה זו לא מהווה תחליף לחוות דעת מומחה בתחום, דיאגנוזה או טיפול. כל התוכן, כולל טקסט, גרפיקה, תמונות ואינפורמציה הנמצא באפליקציה או זמין דרכה מיועד לצורך מידע כללי בלבד.</string>
+    <string-array name="genderList">
+        <item>זכר</item>
+        <item>נקבה</item>
+        <item>אחר</item>
+    </string-array>
 </resources>
