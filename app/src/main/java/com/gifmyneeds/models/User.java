@@ -1,12 +1,14 @@
 package com.gifmyneeds.models;
 
+import java.io.Serializable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "user")
-public class User {
+public class User implements Serializable {
     @PrimaryKey
+    @ColumnInfo(name = "email")
     private String email;
 
     @ColumnInfo(name = "full_name")
