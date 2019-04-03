@@ -20,6 +20,12 @@ public class User implements Serializable {
     @ColumnInfo(name = "password")
     private String password;
 
+    public User(@NonNull String email, String fullName, String password) {
+        this.email = email;
+        this.fullName = fullName;
+        this.password = password;
+    }
+
     public String getFullName() {
         return fullName;
     }

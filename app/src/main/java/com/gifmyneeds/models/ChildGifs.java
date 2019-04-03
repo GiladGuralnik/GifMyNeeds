@@ -9,6 +9,11 @@ public class ChildGifs implements Serializable {
     private String category;
     private ArrayList<String> pathGif;
 
+    public ChildGifs(String childId, String category, ArrayList<String> pathGif) {
+        this.childId = childId;
+        this.category = category;
+        this.pathGif = pathGif;
+    }
 
     public String getCategory() {
         return category;
@@ -18,8 +23,6 @@ public class ChildGifs implements Serializable {
         this.category = category;
     }
 
-
-
     public ArrayList<String> getPathGif() {
         return pathGif;
     }
@@ -27,10 +30,4 @@ public class ChildGifs implements Serializable {
     public void setPathGif(ArrayList<String> pathGif) {
         this.pathGif = pathGif;
     }
-
-
-
-
-
-
 }

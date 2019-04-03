@@ -24,6 +24,12 @@ public class Child implements Serializable {
     @ColumnInfo(name = "gender")
     private String gender;
 
+    public Child(String fullName, String age, String gender) {
+        this.fullName = fullName;
+        this.age = age;
+        this.gender = gender;
+    }
+
     public String getId() {
         return id;
     }
