@@ -32,7 +32,8 @@
     <string name="child_details_text">פרטי הילד:</string>
     <string name="gender_text">מגדר:</string>
     <string name="no_selected_child">לא נבחר ילד</string>
-    <string name="edit_child_board">ערוך</string>
+    <string name="edit_child_board">ערוך לוח פרטי</string>
+    <string name="personal_board">הצג לוח פרטי</string>
     <string-array name="genderList">
         <item>זכר</item>
         <item>נקבה</item>
