@@ -4,6 +4,7 @@
     package="com.gifmyneeds">
 
     <application
+        android:name="com.gifmyneeds.utilities.GifMyNeedsApplication"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"

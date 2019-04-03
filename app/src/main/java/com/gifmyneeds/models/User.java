@@ -34,6 +34,7 @@ public class User implements Serializable {
         return password;
     }
 
+    @NonNull
     public String getEmail() {
         return email;
     }
@@ -48,5 +49,11 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return fullName;
     }
 }
