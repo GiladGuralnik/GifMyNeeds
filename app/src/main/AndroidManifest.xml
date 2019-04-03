@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.menus.ChildMenuActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -27,7 +27,6 @@
         <activity android:name=".activities.user.SelectCategoryForBoardActivity" />
         <activity android:name=".activities.user.SelectGifsForBoardActivity" />
         <activity android:name=".activities.user.SignUpActivity" />
-        <activity android:name=".activities.menus.ChildMenuActivity" />
     </application>
 
 </manifest>
