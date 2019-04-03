@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Entity(tableName = "child")
 public class Child implements Serializable {
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     @NonNull
     @ColumnInfo(name = "id")
     private String id;
@@ -24,12 +24,14 @@ public class Child implements Serializable {
     @ColumnInfo(name = "gender")
     private String gender;
 
-    public Child(String fullName, String age, String gender) {
+    public Child(String id, String fullName, String age, String gender) {
+        this.id = id;
         this.fullName = fullName;
         this.age = age;
         this.gender = gender;
     }
 
+    @NonNull
     public String getId() {
         return id;
     }
@@ -60,5 +62,11 @@ public class Child implements Serializable {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return fullName;
     }
 }
