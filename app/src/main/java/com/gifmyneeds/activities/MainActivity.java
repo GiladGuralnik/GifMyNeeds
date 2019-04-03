@@ -2,6 +2,7 @@ package com.gifmyneeds.activities;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.gifmyneeds.R;
+import com.gifmyneeds.activities.user.SelectCategoryForBoardActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -25,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent intent = new Intent(this, SelectCategoryForBoardActivity.class);
+        startActivity(intent);
 
         signinBtn = (Button) findViewById(R.id.signinBtn);
         signupBtn = (Button) findViewById(R.id.signupBtn);

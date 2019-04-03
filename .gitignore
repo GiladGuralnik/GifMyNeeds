@@ -46,7 +46,7 @@ build/
 captures/
 output.json
 build.gradle
-/.idea/
+.idea/
 
 # NDK
 obj/

@@ -1,8 +1,9 @@
 package com.gifmyneeds.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ChildGifs {
+public class ChildGifs implements Serializable {
 
     private String childId;
     private String category;
