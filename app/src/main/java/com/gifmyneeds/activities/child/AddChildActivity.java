@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import com.gifmyneeds.R;
-import com.gifmyneeds.activities.menus.ChildMenuActivity;
+import com.gifmyneeds.activities.menus.ChildListActivity;
 import com.gifmyneeds.models.Child;
 
 
@@ -59,7 +59,7 @@ public class AddChildActivity extends AppCompatActivity implements View.OnClickL
 
         private void addChild() {
             if (etAge.getText().toString().length()!=0 && etName.getText().toString().length()!=0) {
-                Intent intent = new Intent(AddChildActivity.this, ChildMenuActivity.class);
+                Intent intent = new Intent(AddChildActivity.this, ChildListActivity.class);
                 Child child = null;
 
                 try {
