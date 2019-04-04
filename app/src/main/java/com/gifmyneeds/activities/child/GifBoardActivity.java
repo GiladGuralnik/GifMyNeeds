@@ -1,5 +1,6 @@
 package com.gifmyneeds.activities.child;
 
+import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -11,6 +12,7 @@ import android.widget.VideoView;
 
 import com.gifmyneeds.R;
 import com.gifmyneeds.activities.MainActivity;
+import com.gifmyneeds.models.ChildGifs;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,11 +23,22 @@ public class GifBoardActivity extends AppCompatActivity {
 
 
     final static int LIMIT = 6;
+    private MediaPlayer mp;
+
+
+    ChildGifs mygif;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gif_board_activity_layout);
+
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if(bundle != null){
+        mygif = bundle.getString("childGif");
+        }
 
         getWindow().setFormat(PixelFormat.UNKNOWN);
 
@@ -88,7 +101,7 @@ public class GifBoardActivity extends AppCompatActivity {
             Uri uri2 = Uri.parse(uriPath);
             v.setVideoURI(uri2);
             v.requestFocus();
-            v.seekTo(1);
+            v.seekTo(1500);
         }
 
 
@@ -105,7 +118,8 @@ public class GifBoardActivity extends AppCompatActivity {
                 VideoView v2 = (VideoView) findViewById(frameOne);
                 if(arr.length>0 && arr[0] != 0) {
 
-                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[0]));
+                    stopPlaying();
+                    mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[0]));
                     mp.start();
                     String uriPath = "android.resource://com.gifmyneeds/" + arr[0];
                     Uri uri2 = Uri.parse(uriPath);
@@ -125,7 +139,9 @@ public class GifBoardActivity extends AppCompatActivity {
                 VideoView v2 = (VideoView) findViewById(frameTwo);
                 if(arr.length>1 && arr[1] != 0) {
 
-                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[1]));
+
+                    stopPlaying();
+                    mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[1]));
                     mp.start();
                     String uriPath = "android.resource://com.gifmyneeds/" + arr[1];
                     Uri uri2 = Uri.parse(uriPath);
@@ -145,7 +161,8 @@ public class GifBoardActivity extends AppCompatActivity {
                 VideoView v2 = (VideoView) findViewById(frameThree);
                 if(arr.length>2 && arr[2] != 0){
 
-                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[2]));
+                    stopPlaying();
+                    mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[2]));
                     mp.start();
                     String uriPath = "android.resource://com.gifmyneeds/" + arr[2];
                     Uri uri2 = Uri.parse(uriPath);
@@ -166,7 +183,8 @@ public class GifBoardActivity extends AppCompatActivity {
 
                 if(arr.length>3 && arr[3] != 0) {
 
-                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[3]));
+                    stopPlaying();
+                    mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[3]));
                     mp.start();
                     String uriPath = "android.resource://com.gifmyneeds/" + arr[3];
                     Uri uri2 = Uri.parse(uriPath);
@@ -186,7 +204,8 @@ public class GifBoardActivity extends AppCompatActivity {
                 VideoView v2 = (VideoView) findViewById(frameFive);
                 if(arr.length>4 && arr[4] != 0) {
 
-                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[4]));
+                    stopPlaying();
+                    mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[4]));
                     mp.start();
                     String uriPath = "android.resource://com.gifmyneeds/" + arr[4];
                     Uri uri2 = Uri.parse(uriPath);
@@ -206,7 +225,8 @@ public class GifBoardActivity extends AppCompatActivity {
                 VideoView v2 = (VideoView) findViewById(frameSix);
                 if(arr.length>5 && arr[5] != 0) {
 
-                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[5]));
+                    stopPlaying();
+                    mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[5]));
                     mp.start();
                     String uriPath = "android.resource://com.gifmyneeds/" + arr[5];
                     Uri uri2 = Uri.parse(uriPath);
@@ -219,5 +239,13 @@ public class GifBoardActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void stopPlaying() {
+        if (mp != null) {
+            mp.stop();
+            mp.release();
+            mp = null;
+        }
     }
 }
