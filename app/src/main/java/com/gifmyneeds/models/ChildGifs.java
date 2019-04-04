@@ -15,6 +15,10 @@ public class ChildGifs implements Serializable {
         this.pathGif = pathGif;
     }
 
+    public  ChildGifs(){
+
+    }
+
     public String getCategory() {
         return category;
     }

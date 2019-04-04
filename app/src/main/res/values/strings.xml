@@ -3,6 +3,7 @@
     <string name="app_name">GifMyNeeds</string>
     <string name="next">הבא</string>
     <string name="enter_category_text">בחר קטגוריה</string>
+    <string name="choose_gif_text">בחר GIF</string>
     <string name="previous">הקודם</string>
     <string name="end_quiz">סיים ושלח</string>
     <string name="name">שם:</string>

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gifmyneeds">
 
     <application
-        android:name="com.gifmyneeds.utilities.GifMyNeedsApplication"
+        android:name=".utilities.GifMyNeedsApplication"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.user.AddNewCategoryActivity"></activity>
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
@@ -19,6 +19,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -29,7 +30,6 @@
         <activity android:name=".activities.user.SelectGifsForBoardActivity" />
         <activity android:name=".activities.user.SignUpActivity" />
         <activity android:name=".activities.menus.ChildMenuActivity" />
-
     </application>
 
 </manifest>
