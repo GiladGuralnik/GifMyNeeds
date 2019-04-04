@@ -28,10 +28,10 @@
     <string name="enter_email_login">אנא הכנס כתובת מייל</string>
     <string name="login">התחברות</string>
 
-    <string name="drink">שתיה</string>
-    <string name="eat">אוכל</string>
-    <string name="entertainment">תחביבים</string>
-    <string name="greetings">ברכות</string>
+    <string name="drink">drink</string>
+    <string name="eat">eat</string>
+    <string name="entertainment">entertainment</string>
+    <string name="greetings">greetings</string>
 
     <string name="signup">הרשמה</string>
     <string name="sign_up_here">אין לך משתמש עדיין? הירשם כאן!</string>
