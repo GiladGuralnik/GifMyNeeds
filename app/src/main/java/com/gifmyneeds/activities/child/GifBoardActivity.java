@@ -1,6 +1,7 @@
 package com.gifmyneeds.activities.child;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -45,12 +46,16 @@ public class GifBoardActivity extends AppCompatActivity {
         getWindow().setFormat(PixelFormat.UNKNOWN);
 
 
-        Button buttonPlayVideo1 = (Button)findViewById(R.id.buttonVideo1);
-        Button buttonPlayVideo2 = (Button)findViewById(R.id.buttonVideo2);
-        Button buttonPlayVideo3 = (Button)findViewById(R.id.buttonVideo3);
-        Button buttonPlayVideo4 = (Button)findViewById(R.id.buttonVideo4);
-        Button buttonPlayVideo5 = (Button)findViewById(R.id.buttonVideo5);
-        Button buttonPlayVideo6 = (Button)findViewById(R.id.buttonVideo6);
+        //Initialize Buttons
+        final Button buttonPlayVideo1 = (Button)findViewById(R.id.buttonVideo1);
+        final Button buttonPlayVideo2 = (Button)findViewById(R.id.buttonVideo2);
+        final Button buttonPlayVideo3 = (Button)findViewById(R.id.buttonVideo3);
+        final Button buttonPlayVideo4 = (Button)findViewById(R.id.buttonVideo4);
+        final Button buttonPlayVideo5 = (Button)findViewById(R.id.buttonVideo5);
+        final Button buttonPlayVideo6 = (Button)findViewById(R.id.buttonVideo6);
+
+        Button [] buttons = {buttonPlayVideo1,buttonPlayVideo2,buttonPlayVideo3,buttonPlayVideo4,buttonPlayVideo5,buttonPlayVideo6 } ;
+
 
 
         //Local Database (Dictionary) to connect between each video file and its matching sound.
@@ -67,6 +72,22 @@ public class GifBoardActivity extends AppCompatActivity {
         videoToSoundMap.put(R.raw.me,R.raw.me_sound);
         videoToSoundMap.put(R.raw.music,R.raw.music_sound);
         videoToSoundMap.put(R.raw.thanks,R.raw.thanks_sound);
+
+        final Map<Integer, Integer> videoToImage = new HashMap<Integer, Integer>();
+        videoToSoundMap.put(R.raw.agree,R.drawable.agree_pic);
+        videoToSoundMap.put(R.raw.byebye,R.drawable.byebye_pic);
+        videoToSoundMap.put(R.raw.disagree,R.drawable.disagree_pic);
+        videoToSoundMap.put(R.raw.drink_coke,R.drawable.drink_coke_pic);
+        videoToSoundMap.put(R.raw.drink_tea,R.drawable.drink_tea_pic);
+        videoToSoundMap.put(R.raw.drink_water,R.drawable.drink_water_pic);
+        videoToSoundMap.put(R.raw.eat_bamba,R.drawable.eat_bamba_pic);
+        videoToSoundMap.put(R.raw.eat_sandwich,R.drawable.eat_sandwich_pic);
+        videoToSoundMap.put(R.raw.hello,R.drawable.hello_pic);
+        videoToSoundMap.put(R.raw.me,R.drawable.me_pic);
+        videoToSoundMap.put(R.raw.music,R.drawable.music_pic);
+        videoToSoundMap.put(R.raw.thanks,R.drawable.thanks_pic);
+
+
 
 
 
@@ -86,6 +107,8 @@ public class GifBoardActivity extends AppCompatActivity {
         //On seek Loop
         for(int i = 0; i<childVideoList.size() && i<LIMIT;i++)
         {
+            //Set Buttons
+            buttons[i].setBackground(getDrawable(Integer.parseInt(childVideoList.get(i))));
 
             VideoView v = (VideoView)findViewById(frameArr[i]);
             String uriPath = "android.resource://com.gifmyneeds/" + childVideoList.get(i);
@@ -105,6 +128,7 @@ public class GifBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                buttonPlayVideo1.setBackgroundColor(Color.TRANSPARENT);
 
                 VideoView v2 = (VideoView) findViewById(frameOne);
                 if(childVideoList.size()>0 && Integer.parseInt(childVideoList.get(0)) != 0) {
@@ -119,6 +143,13 @@ public class GifBoardActivity extends AppCompatActivity {
                     v2.start();
                 }
 
+                v2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        buttonPlayVideo1.setBackground(getDrawable(Integer.parseInt(childVideoList.get(0))));
+                    }
+                });
+
             }
         });
 
@@ -126,6 +157,8 @@ public class GifBoardActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+
+                buttonPlayVideo2.setBackgroundColor(Color.TRANSPARENT);
 
                 VideoView v2 = (VideoView) findViewById(frameTwo);
                 if(childVideoList.size()>1 && Integer.parseInt(childVideoList.get(1)) != 0) {
@@ -140,6 +173,13 @@ public class GifBoardActivity extends AppCompatActivity {
                     v2.requestFocus();
                     v2.start();
                 }
+
+                v2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        buttonPlayVideo1.setBackground(getDrawable(Integer.parseInt(childVideoList.get(1))));
+                    }
+                });
 
             }
         });
