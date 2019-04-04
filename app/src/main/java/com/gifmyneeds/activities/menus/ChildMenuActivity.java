@@ -152,11 +152,11 @@ import java.util.ArrayList;
             Child dana = null;
             Child mike = null;
             try {
-                john = new Child("John", "5", "זכר");
-                ron = new Child("Ron", "8", "זכר");
-                mira = new Child("Mira", "3", "נקבה");
-                dana = new Child("Dana", "2", "נקבה");
-                mike = new Child("Mike", "8", "זכר");
+                john = new Child("1234","John", "5", "זכר");
+                ron = new Child("4321","Ron", "8", "זכר");
+                mira = new Child("1122","Mira", "3", "נקבה");
+                dana = new Child("1232","Dana", "2", "נקבה");
+                mike = new Child("2233","Mike", "8", "זכר");
 
                 childsList.add(john);
                 childsList.add(ron);

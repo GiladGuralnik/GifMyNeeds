@@ -32,12 +32,30 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="109dp"
-        android:layout_marginLeft="109dp"
-        android:layout_marginTop="262dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginLeft="107dp"
+        android:layout_marginTop="307dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/enter_age"
+        android:inputType="number"
+        android:textColorHint="@color/colorAccentShlomi"
+        tools:targetApi="o" />
+
+    <EditText
+        android:id="@+id/etID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginTop="232dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/enter_id"
         android:inputType="number"
         android:textColorHint="@color/colorAccentShlomi"
         tools:targetApi="o" />
@@ -50,10 +68,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="109dp"
-        android:layout_marginLeft="109dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginLeft="116dp"
 
-        android:layout_marginTop="372dp" />
+        android:layout_marginTop="401dp" />
 
     <Button
         android:id="@+id/btnSubChild"
@@ -62,9 +80,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="172dp"
-        android:layout_marginLeft="172dp"
-        android:layout_marginTop="471dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginLeft="155dp"
+        android:layout_marginTop="529dp"
         android:background="@drawable/button_selector"
         android:text="@string/submit" />
 
@@ -97,15 +115,28 @@
         android:textSize="17sp" />
 
     <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="248dp"
+        android:text="@string/ID_text"
+        android:textSize="17sp" />
+
+    <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="278dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="318dp"
         android:text="@string/age_text"
         android:textSize="17sp" />
 
@@ -118,7 +149,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="29dp"
         android:layout_marginLeft="29dp"
-        android:layout_marginTop="382dp"
+        android:layout_marginTop="413dp"
         android:text="@string/gender_text"
         android:textSize="17sp" />
 
