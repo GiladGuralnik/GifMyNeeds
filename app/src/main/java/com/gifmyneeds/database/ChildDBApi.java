@@ -7,16 +7,19 @@ import com.gifmyneeds.models.Child;
 
 public class ChildDBApi {
     private static ChildDao childDao;
+    private static AppDatabase db;
 
     private static void init(Context context) {
-        AppDatabase db = AppDatabase.getAppDatabase(context);
+        db = AppDatabase.getAppDatabase(context);
         childDao = db.childDao();
     }
 
     public static Child getChildById(Context context, String id) {
         try {
             init(context);
-            return childDao.getChildById(id);
+            Child child = childDao.getChildById(id);
+            db.close();
+            return child;
         }
         catch (Throwable e) {
             Toast.makeText(context, "Database Error", Toast.LENGTH_LONG).show();
@@ -28,6 +31,7 @@ public class ChildDBApi {
         try {
             init(context);
             childDao.insertAll(child);
+            db.close();
             return true;
         }
         catch (Throwable e) {
@@ -40,6 +44,7 @@ public class ChildDBApi {
         try {
             init(context);
             childDao.delete(child);
+            db.close();
         }
         catch (Throwable e) {
             Toast.makeText(context, "Database Error", Toast.LENGTH_LONG).show();
