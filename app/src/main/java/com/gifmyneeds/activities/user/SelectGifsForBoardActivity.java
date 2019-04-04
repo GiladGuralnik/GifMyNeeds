@@ -19,48 +19,183 @@ import java.util.ArrayList;
 
 public class SelectGifsForBoardActivity extends AppCompatActivity implements View.OnClickListener  {
 
+    private ArrayList<String> allVideo ;
     private ArrayList<String> str = new ArrayList<String>();
-    private  ChildGifs childGifs = new ChildGifs("1234","game",str);
+    private  ChildGifs childGifs= new ChildGifs("1234","eat",str);
 
     private static final String TAG = "SelectGifsForBoardActiv";
-    //Gif from res
-    //String gifPath = findViewById("")
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_gifs_for_board_activity_layout);
 
+        //Intent incomingIntent = getIntent();
+        //Bundle bundle = incomingIntent.getExtras();
+        //childGifs = (ChildGifs) incomingIntent.getSerializableExtra("child_gif");
 
+        //ArrayList<String> categoryVideos = getCategoryVideos(childGifs.getCategory());
 
         getWindow().setFormat(PixelFormat.UNKNOWN);
 
         //Set Button------------------------------------------------------
         Button buttonPlayVideo1 = (Button)findViewById(R.id.button_Video1_1);
         Button buttonPlayVideo2 = (Button)findViewById(R.id.button_Video1_2);
+        Button buttonPlayVideo3 = (Button)findViewById(R.id.button_Video2_1);
+        Button buttonPlayVideo4 = (Button)findViewById(R.id.button_Video2_2);
+        Button buttonPlayVideo5 = (Button)findViewById(R.id.button_Video3_1);
+        Button buttonPlayVideo6 = (Button)findViewById(R.id.button_Video3_2);
+        Button buttonPlayVideo7 = (Button)findViewById(R.id.button_Video4_1);
+        Button buttonPlayVideo8 = (Button)findViewById(R.id.button_Video4_2);
+        Button buttonPlayVideo9 = (Button)findViewById(R.id.button_Video5_1);
+        Button buttonPlayVideo10 = (Button)findViewById(R.id.button_Video5_2);
+        Button buttonPlayVideo11 = (Button)findViewById(R.id.button_Video6_1);
+        Button buttonPlayVideo12 = (Button)findViewById(R.id.button_Video6_2);
         buttonPlayVideo1.setText("Add");
         buttonPlayVideo2.setText("Add");
+        buttonPlayVideo3.setText("Add");
+        buttonPlayVideo4.setText("Add");
+        buttonPlayVideo5.setText("Add");
+        buttonPlayVideo6.setText("Add");
+        buttonPlayVideo7.setText("Add");
+        buttonPlayVideo8.setText("Add");
+        buttonPlayVideo9.setText("Add");
+        buttonPlayVideo10.setText("Add");
+        buttonPlayVideo11.setText("Add");
+        buttonPlayVideo12.setText("Add");
         //-----------------------------------------------------------------
+
+        //gou lisineron butten---------------------------------------------
         buttonPlayVideo1.setOnClickListener(this);
         buttonPlayVideo2.setOnClickListener(this);
+        buttonPlayVideo3.setOnClickListener(this);
+        buttonPlayVideo4.setOnClickListener(this);
+        buttonPlayVideo5.setOnClickListener(this);
+        buttonPlayVideo6.setOnClickListener(this);
+        buttonPlayVideo7.setOnClickListener(this);
+        buttonPlayVideo8.setOnClickListener(this);
+        buttonPlayVideo9.setOnClickListener(this);
+        buttonPlayVideo10.setOnClickListener(this);
+        buttonPlayVideo11.setOnClickListener(this);
+        buttonPlayVideo12.setOnClickListener(this);
+        //-----------------------------------------------------------------
 
-        //Set All video
-        VideoView video1 = (VideoView)findViewById(R.id.video_View1_1);
-        String uriPath = "android.resource://com.gifmyneeds/" + R.raw.agree;
-        Uri uri2 = Uri.parse(uriPath);
-        video1.setVideoURI(uri2);
-        video1.requestFocus();
-        video1.seekTo(1);
+
+        VideoView video;
+        String uriPath;
+        Uri uri;
+        //Initialize all videos--------------------------------------------
 
 
-        VideoView video2 = (VideoView)findViewById(R.id.video_View1_2);
+        //row 1--------------------------------------------------------
+        video = (VideoView)findViewById(R.id.video_View1_1);
+        uriPath = "android.resource://com.gifmyneeds/" + R.raw.agree;
+        uri = Uri.parse(uriPath);
+        video.setVideoURI(uri);
+        video.requestFocus();
+        video.seekTo(1);
+
+        video = (VideoView)findViewById(R.id.video_View1_2);
         uriPath = "android.resource://com.gifmyneeds/" + R.raw.byebye;
-        uri2 = Uri.parse(uriPath);
-        video2.setVideoURI(uri2);
-        video2.requestFocus();
-        video2.seekTo(1);
+        uri = Uri.parse(uriPath);
+        video.setVideoURI(uri);
+        video.requestFocus();
+        video.seekTo(1);
+        //---------------------------------------------------------------
 
+
+        //row 2--------------------------------------------------------
+        video = (VideoView)findViewById(R.id.video_View2_1);
+        uriPath = "android.resource://com.gifmyneeds/" + R.raw.disagree;
+        uri = Uri.parse(uriPath);
+        video.setVideoURI(uri);
+        video.requestFocus();
+        video.seekTo(1);
+
+        video = (VideoView)findViewById(R.id.video_View2_2);
+        uriPath = "android.resource://com.gifmyneeds/" + R.raw.drink_coke;
+        uri = Uri.parse(uriPath);
+        video.setVideoURI(uri);
+        video.requestFocus();
+        video.seekTo(1);
+        //---------------------------------------------------------------
+
+        //row 3--------------------------------------------------------
+        video = (VideoView)findViewById(R.id.video_View3_1);
+        uriPath = "android.resource://com.gifmyneeds/" + R.raw.drink_tea;
+        uri = Uri.parse(uriPath);
+        video.setVideoURI(uri);
+        video.requestFocus();
+        video.seekTo(1);
+
+        video = (VideoView)findViewById(R.id.video_View3_2);
+        uriPath = "android.resource://com.gifmyneeds/" + R.raw.drink_water;
+        uri = Uri.parse(uriPath);
+        video.setVideoURI(uri);
+        video.requestFocus();
+        video.seekTo(1);
+        //---------------------------------------------------------------
+        //row 4--------------------------------------------------------
+        video = (VideoView)findViewById(R.id.video_View4_1);
+        uriPath = "android.resource://com.gifmyneeds/" + R.raw.eat_bamba;
+        uri = Uri.parse(uriPath);
+        video.setVideoURI(uri);
+        video.requestFocus();
+        video.seekTo(1);
+
+        video = (VideoView)findViewById(R.id.video_View4_2);
+        uriPath = "android.resource://com.gifmyneeds/" + R.raw.eat_sandwich;
+        uri = Uri.parse(uriPath);
+        video.setVideoURI(uri);
+        video.requestFocus();
+        video.seekTo(1);
+        //---------------------------------------------------------------
+        //row 5--------------------------------------------------------
+        video = (VideoView)findViewById(R.id.video_View5_1);
+        uriPath = "android.resource://com.gifmyneeds/" + R.raw.hello;
+        uri = Uri.parse(uriPath);
+        video.setVideoURI(uri);
+        video.requestFocus();
+        video.seekTo(1);
+
+        video = (VideoView)findViewById(R.id.video_View5_2);
+        uriPath = "android.resource://com.gifmyneeds/" + R.raw.me;
+        uri = Uri.parse(uriPath);
+        video.setVideoURI(uri);
+        video.requestFocus();
+        video.seekTo(1);
+        //---------------------------------------------------------------
+        //row 6--------------------------------------------------------
+        video = (VideoView)findViewById(R.id.video_View6_1);
+        uriPath = "android.resource://com.gifmyneeds/" + R.raw.music;
+        uri = Uri.parse(uriPath);
+        video.setVideoURI(uri);
+        video.requestFocus();
+        video.seekTo(1);
+
+        video = (VideoView)findViewById(R.id.video_View6_2);
+        uriPath = "android.resource://com.gifmyneeds/" + R.raw.thanks;
+        uri = Uri.parse(uriPath);
+        video.setVideoURI(uri);
+        video.requestFocus();
+        video.seekTo(1);
+        //---------------------------------------------------------------
+        //row 1--------------------------------------------------------
+        video = (VideoView)findViewById(R.id.video_View1_1);
+        uriPath = "android.resource://com.gifmyneeds/" + R.raw.agree;
+        uri = Uri.parse(uriPath);
+        video.setVideoURI(uri);
+        video.requestFocus();
+        video.seekTo(1);
+
+        video = (VideoView)findViewById(R.id.video_View1_2);
+        uriPath = "android.resource://com.gifmyneeds/" + R.raw.byebye;
+        uri = Uri.parse(uriPath);
+        video.setVideoURI(uri);
+        video.requestFocus();
+        video.seekTo(1);
+        //---------------------------------------------------------------
+        //-----------------------------------------------------------------
 
 
 //        Intent intent = new Intent(SelectCategoryForBoardActivity.this,
@@ -68,17 +203,38 @@ public class SelectGifsForBoardActivity extends AppCompatActivity implements Vie
 //        intent.putExtra("key", "value");
 //        startActivity(intent);
         //String value = incomingIntent.getStringExtra("key");
-        //Intent incomingIntent = getIntent();
 
-        //childGifs = (ChildGifs) incomingIntent.getSerializableExtra("child_gif");
         //getGifsByCategory(childGifs.getCategory());
 
     }
 
-    private ArrayList<String> getGifsByCategory(String category){
+    private void fillAllVideo(){
+        allVideo= new ArrayList<String>();
+        String str ="android.resource://com.gifmyneeds/" + R.raw.agree;
+        allVideo.add(str);
+        str ="android.resource://com.gifmyneeds/" + R.raw.byebye;
+        allVideo.add(str);
+        str ="android.resource://com.gifmyneeds/" + R.raw.disagree;
+        allVideo.add(str);
+        str ="android.resource://com.gifmyneeds/" + R.raw.drink_coke;
+        allVideo.add(str);
+        str ="android.resource://com.gifmyneeds/" + R.raw.drink_water;
+        allVideo.add(str);
+        str ="android.resource://com.gifmyneeds/" + R.raw.drink_tea;
+        allVideo.add(str);
+        str ="android.resource://com.gifmyneeds/" + R.raw.eat_bamba;
+        allVideo.add(str);
+        str ="android.resource://com.gifmyneeds/" + R.raw.eat_sandwich;
+        allVideo.add(str);
+        str ="android.resource://com.gifmyneeds/" + R.raw.hello;
+        allVideo.add(str);
+        str ="android.resource://com.gifmyneeds/" + R.raw.music;
+        allVideo.add(str);
+        str ="android.resource://com.gifmyneeds/" + R.raw.thanks;
+        allVideo.add(str);
 
-        return null;
     }
+
 
     private void addPath(String txt){
         if(childGifs.getPathGif() ==null)
@@ -87,6 +243,8 @@ public class SelectGifsForBoardActivity extends AppCompatActivity implements Vie
         childGifs.getPathGif().add(txt);
         Log.d(TAG, "addPath: "+childGifs.getPathGif().toString());
     }
+
+
     private void removePath(String txt){
         if(childGifs.getPathGif() ==null)
             childGifs.setPathGif(new ArrayList<String>());
@@ -94,20 +252,78 @@ public class SelectGifsForBoardActivity extends AppCompatActivity implements Vie
         childGifs.getPathGif().remove(txt);
         Log.d(TAG, "addPath: "+childGifs.getPathGif().toString());
     }
+
+
+    private ArrayList<String> getCategoryVideos(String category){
+        fillAllVideo();//fill allVideo with all video
+
+        ArrayList<String> list = new ArrayList<String>();
+        String str = "android.resource://com.gifmyneeds/"+category;
+
+        for (int i=0; i<allVideo.size() ; i++ ){
+            if(allVideo.get(i).contains(str)){
+                list.add(allVideo.get(i));
+            }
+
+        }
+        return list;
+
+
+    }
+
     @Override
     public void onClick(View view) {
         String uriPath;
-        Uri uri2;
+        Uri uri;
         VideoView video;
         Button btn;
         switch(view.getId()) {
+            //row1------------------
             case R.id.button_Video1_1:
                 btn = (Button) findViewById(R.id.button_Video1_1);
-
                 video = (VideoView)findViewById(R.id.video_View1_1);
                 uriPath = "android.resource://com.gifmyneeds/" + R.raw.agree;
-                uri2 = Uri.parse(uriPath);
-                video.setVideoURI(uri2);
+                uri = Uri.parse(uriPath);
+                video.setVideoURI(uri);
+                video.requestFocus();
+                video.start();
+                if(btn.getText()=="Add"){
+                    addPath(uriPath);
+                    btn.setText("Remove");
+
+                }
+                else{
+                    removePath(uriPath);
+                    btn.setText("Add");
+                }
+                break;
+
+            case R.id.button_Video1_2:
+                btn = (Button) findViewById(R.id.button_Video1_2);
+                video = (VideoView)findViewById(R.id.video_View1_2);
+                uriPath = "android.resource://com.gifmyneeds/" + R.raw.byebye;
+                uri = Uri.parse(uriPath);
+                video.setVideoURI(uri);
+                video.requestFocus();
+                video.start();
+                if(btn.getText()=="Add"){
+                    addPath(uriPath);
+                    btn.setText("Remove");
+                }
+                else{
+                    removePath(uriPath);
+                    btn.setText("Add");
+                }
+             break;
+            //-----------------------------------
+
+            //row2------------------
+            case R.id.button_Video2_1:
+                btn = (Button) findViewById(R.id.button_Video2_1);
+                video = (VideoView)findViewById(R.id.video_View2_1);
+                uriPath = "android.resource://com.gifmyneeds/" + R.raw.disagree;
+                uri = Uri.parse(uriPath);
+                video.setVideoURI(uri);
                 video.requestFocus();
                 video.start();
 
@@ -120,22 +336,34 @@ public class SelectGifsForBoardActivity extends AppCompatActivity implements Vie
                     removePath(uriPath);
                     btn.setText("Add");
                 }
-
-                //video.getDuration();
-                //video.seekTo();//no need
-
-
                 break;
-
-            case R.id.button_Video1_2:
-                btn = (Button) findViewById(R.id.button_Video1_2);
-
-                VideoView v2 = (VideoView)findViewById(R.id.video_View1_2);
-                uriPath = "android.resource://com.gifmyneeds/" + R.raw.byebye;
-                uri2 = Uri.parse(uriPath);
-                v2.setVideoURI(uri2);
-                v2.requestFocus();
-                v2.start();
+            case R.id.button_Video2_2:
+                btn = (Button) findViewById(R.id.button_Video2_2);
+                video = (VideoView)findViewById(R.id.video_View2_2);
+                uriPath = "android.resource://com.gifmyneeds/" + R.raw.drink_coke;
+                uri = Uri.parse(uriPath);
+                video.setVideoURI(uri);
+                video.requestFocus();
+                video.start();
+                if(btn.getText()=="Add"){
+                    addPath(uriPath);
+                    btn.setText("Remove");
+                }
+                else{
+                    removePath(uriPath);
+                    btn.setText("Add");
+                }
+                break;
+            //-----------------------------------
+            //row3------------------
+            case R.id.button_Video3_1:
+                btn = (Button) findViewById(R.id.button_Video3_1);
+                video = (VideoView)findViewById(R.id.video_View3_1);
+                uriPath = "android.resource://com.gifmyneeds/" + R.raw.drink_tea;
+                uri = Uri.parse(uriPath);
+                video.setVideoURI(uri);
+                video.requestFocus();
+                video.start();
 
                 if(btn.getText()=="Add"){
                     addPath(uriPath);
@@ -146,10 +374,142 @@ public class SelectGifsForBoardActivity extends AppCompatActivity implements Vie
                     removePath(uriPath);
                     btn.setText("Add");
                 }
-
-
                 break;
+            case R.id.button_Video3_2:
+                btn = (Button) findViewById(R.id.button_Video3_2);
+                video = (VideoView)findViewById(R.id.video_View3_2);
+                uriPath = "android.resource://com.gifmyneeds/" + R.raw.drink_water;
+                uri = Uri.parse(uriPath);
+                video.setVideoURI(uri);
+                video.requestFocus();
+                video.start();
+                if(btn.getText()=="Add"){
+                    addPath(uriPath);
+                    btn.setText("Remove");
+                }
+                else{
+                    removePath(uriPath);
+                    btn.setText("Add");
+                }
+                break;
+            //-----------------------------------
+            //row5------------------
+            case R.id.button_Video4_1:
+                btn = (Button) findViewById(R.id.button_Video4_1);
+                video = (VideoView)findViewById(R.id.video_View4_1);
+                uriPath = "android.resource://com.gifmyneeds/" + R.raw.eat_bamba;
+                uri = Uri.parse(uriPath);
+                video.setVideoURI(uri);
+                video.requestFocus();
+                video.start();
 
+                if(btn.getText()=="Add"){
+                    addPath(uriPath);
+                    btn.setText("Remove");
+
+                }
+                else{
+                    removePath(uriPath);
+                    btn.setText("Add");
+                }
+                break;
+            case R.id.button_Video4_2:
+                btn = (Button) findViewById(R.id.button_Video4_2);
+                video = (VideoView)findViewById(R.id.video_View4_2);
+                uriPath = "android.resource://com.gifmyneeds/" + R.raw.eat_sandwich;
+                uri = Uri.parse(uriPath);
+                video.setVideoURI(uri);
+                video.requestFocus();
+                video.start();
+                if(btn.getText()=="Add"){
+                    addPath(uriPath);
+                    btn.setText("Remove");
+                }
+                else{
+                    removePath(uriPath);
+                    btn.setText("Add");
+                }
+                break;
+            //-----------------------------------
+            //row5------------------
+            case R.id.button_Video5_1:
+                btn = (Button) findViewById(R.id.button_Video5_1);
+                video = (VideoView)findViewById(R.id.video_View5_1);
+                uriPath = "android.resource://com.gifmyneeds/" + R.raw.hello;
+                uri = Uri.parse(uriPath);
+                video.setVideoURI(uri);
+                video.requestFocus();
+                video.start();
+
+                if(btn.getText()=="Add"){
+                    addPath(uriPath);
+                    btn.setText("Remove");
+
+                }
+                else{
+                    removePath(uriPath);
+                    btn.setText("Add");
+                }
+                break;
+            case R.id.button_Video5_2:
+                btn = (Button) findViewById(R.id.button_Video5_2);
+                video = (VideoView)findViewById(R.id.video_View5_2);
+                uriPath = "android.resource://com.gifmyneeds/" + R.raw.me;
+                uri = Uri.parse(uriPath);
+                video.setVideoURI(uri);
+                video.requestFocus();
+                video.start();
+                if(btn.getText()=="Add"){
+                    addPath(uriPath);
+                    btn.setText("Remove");
+                }
+                else{
+                    removePath(uriPath);
+                    btn.setText("Add");
+                }
+                break;
+            //-----------------------------------
+            //row6------------------
+            case R.id.button_Video6_1:
+                btn = (Button) findViewById(R.id.button_Video6_1);
+                video = (VideoView)findViewById(R.id.video_View6_1);
+                uriPath = "android.resource://com.gifmyneeds/" + R.raw.music;
+                uri = Uri.parse(uriPath);
+                video.setVideoURI(uri);
+                video.requestFocus();
+                video.start();
+
+                if(btn.getText()=="Add"){
+                    addPath(uriPath);
+                    btn.setText("Remove");
+
+                }
+                else{
+                    removePath(uriPath);
+                    btn.setText("Add");
+                }
+                break;
+            case R.id.button_Video6_2:
+                btn = (Button) findViewById(R.id.button_Video6_2);
+                video = (VideoView)findViewById(R.id.video_View6_2);
+                uriPath = "android.resource://com.gifmyneeds/" + R.raw.thanks;
+                uri = Uri.parse(uriPath);
+                video.setVideoURI(uri);
+                video.requestFocus();
+                video.start();
+                if(btn.getText()=="Add"){
+                    addPath(uriPath);
+                    btn.setText("Remove");
+                }
+                else{
+                    removePath(uriPath);
+                    btn.setText("Add");
+                }
+                break;
+            //-----------------------------------
+            case R.id.SubmitButton:
+                //SENDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+                break;
         }
 
     }
