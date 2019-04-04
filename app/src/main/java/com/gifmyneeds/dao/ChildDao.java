@@ -18,6 +18,9 @@ public interface ChildDao {
     @Query("SELECT * FROM child WHERE full_name LIKE :fullName")
     List<Child> findByName(String fullName);
 
+    @Query("SELECT * FROM child WHERE parent_email = :parentEmail")
+    List<Child> findByParentEmail(String parentEmail);
+
     @Insert
     void insertAll(Child... children);
 

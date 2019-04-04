@@ -1,11 +1,16 @@
 package com.gifmyneeds.database;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.Toast;
 import com.gifmyneeds.dao.ChildDao;
 import com.gifmyneeds.models.Child;
 
+import java.util.List;
+
 public class ChildDBApi {
+
+    private static final String TAG = "ChildDBApi";
     private static ChildDao childDao;
     private static AppDatabase db;
 
@@ -36,6 +41,7 @@ public class ChildDBApi {
         }
         catch (Throwable e) {
             Toast.makeText(context, "Database Error", Toast.LENGTH_LONG).show();
+            Log.d(TAG, "addNewChild: " + e);
             return false;
         }
     }
@@ -49,5 +55,19 @@ public class ChildDBApi {
         catch (Throwable e) {
             Toast.makeText(context, "Database Error", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public static List<Child> getChildrenOfParent(Context context, String parentEmail) {
+        try {
+            init(context);
+            List<Child> children = childDao.findByParentEmail(parentEmail);
+            db.close();
+            return children;
+        }
+        catch (Throwable e) {
+            Toast.makeText(context, "Database Error", Toast.LENGTH_LONG).show();
+            Log.d(TAG, "getChildrenOfParent: " + e);
+        }
+        return null;
     }
 }

@@ -44,6 +44,9 @@
     <string name="uncorrect_name">שם לא תקין</string>
     <string name="uncorrect_password">סיסמה לא תקינה</string>
     <string name="sign_up_failed">ההתחברות נכשלה</string>
+    <string name="incorrect_age">גיל לא תקין</string>
+    <string name="incorrect_id">תעודת זהות לא תקינה</string>
+    <string name="error_while_add_new_child">אירעה שגיאה בזמן הוספת הילד</string>
     <string-array name="genderList">
         <item>זכר</item>
         <item>נקבה</item>
