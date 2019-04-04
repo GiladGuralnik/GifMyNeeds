@@ -10,13 +10,13 @@
 
 
     <EditText
-        android:id="@+id/userName"
+        android:id="@+id/email"
         android:layout_width="214dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/enter_username"
+        android:hint="@string/enter_email_login"
         android:layout_gravity="center"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:textDirection="anyRtl"
         android:textStyle="bold"
         android:layout_marginTop="15dp"/>
@@ -35,7 +35,7 @@
         android:layout_marginTop="20dp"/>
 
     <Button
-        android:id="@+id/signinBtn"
+        android:id="@+id/signInBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
