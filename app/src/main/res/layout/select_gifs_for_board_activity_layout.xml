@@ -41,7 +41,9 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="0dp"
                 android:background="@android:color/transparent"
-                android:text="add" />
+                android:text="Add"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
                 <VideoView
                     android:id="@+id/video_View1_2"
@@ -62,7 +64,9 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
                 android:background="@android:color/transparent"
-                android:text="add" />
+                android:text="Add"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
 
         </RelativeLayout>
