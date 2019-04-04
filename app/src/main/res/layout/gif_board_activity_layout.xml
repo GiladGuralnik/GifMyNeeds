@@ -19,7 +19,7 @@
 
             <VideoView
                 android:id="@+id/videoView1"
-                android:layout_width="208dp"
+                android:layout_width="207dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
@@ -31,7 +31,7 @@
 
             <Button
                 android:id="@+id/buttonVideo1"
-                android:layout_width="210dp"
+                android:layout_width="207dp"
                 android:layout_height="match_parent"
                 android:layout_alignEnd="@+id/videoView1"
                 android:layout_alignParentStart="true"
@@ -39,19 +39,19 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="-5dp"
+                android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
                 android:background="@android:color/transparent" />
 
             <VideoView
                 android:id="@+id/videoView2"
-                android:layout_width="196dp"
+                android:layout_width="209dp"
                 android:layout_height="match_parent"
 
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="0dp"
+                android:layout_marginStart="-1dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
@@ -59,13 +59,13 @@
 
             <Button
                 android:id="@+id/buttonVideo2"
-                android:layout_width="206dp"
+                android:layout_width="198dp"
                 android:layout_height="match_parent"
                 android:layout_alignStart="@+id/videoView2"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="-4dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
@@ -89,39 +89,39 @@
 
             <VideoView
                 android:id="@+id/videoView3"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
+                android:layout_marginEnd="1dp"
                 android:layout_marginBottom="0dp"
                 android:layout_toStartOf="@+id/videoView4" />
 
             <Button
                 android:id="@+id/buttonVideo3"
-                android:layout_width="204dp"
-                android:layout_height="match_parent"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="3dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginEnd="3dp"
-                android:layout_marginBottom="0dp"
+                android:layout_marginBottom="1dp"
                 android:background="@android:color/transparent" />
 
             <VideoView
                 android:id="@+id/videoView4"
-                android:layout_width="207dp"
+                android:layout_width="210dp"
                 android:layout_height="match_parent"
 
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="0dp"
+                android:layout_marginStart="-2dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
@@ -129,14 +129,14 @@
 
             <Button
                 android:id="@+id/buttonVideo4"
-                android:layout_width="203dp"
-                android:layout_height="match_parent"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_alignStart="@+id/videoView4"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="1dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="1dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
                 android:background="@android:color/transparent" />
@@ -160,55 +160,54 @@
 
             <VideoView
                 android:id="@+id/videoView5"
-                android:layout_width="wrap_content"
+                android:layout_width="203dp"
                 android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
+                android:layout_alignStart="@+id/buttonVideo6"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="0dp"
+                android:layout_marginStart="-206dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="202dp"
-                android:layout_marginBottom="0dp" />
+                android:layout_marginEnd="-1dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toStartOf="@+id/buttonVideo6" />
 
             <Button
                 android:id="@+id/buttonVideo5"
                 android:layout_width="205dp"
-                android:layout_height="195dp"
+                android:layout_height="199dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="0dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginTop="1dp"
                 android:layout_marginBottom="0dp"
-                android:layout_toStartOf="@+id/buttonVideo6"
                 android:background="@android:color/transparent" />
 
             <VideoView
                 android:id="@+id/videoView6"
-                android:layout_width="203dp"
-                android:layout_height="198dp"
+                android:layout_width="207dp"
+                android:layout_height="match_parent"
 
                 android:layout_alignStart="@+id/buttonVideo6"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="0dp"
+                android:layout_marginStart="2dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp" />
 
             <Button
                 android:id="@+id/buttonVideo6"
-                android:layout_width="192dp"
-                android:layout_height="match_parent"
+                android:layout_width="202dp"
+                android:layout_height="197dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="-4dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="0dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="2dp"
                 android:background="@android:color/transparent" />
 
 

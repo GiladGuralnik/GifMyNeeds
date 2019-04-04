@@ -43,6 +43,8 @@ public class GifBoardActivity extends AppCompatActivity {
 
         childVideoList = child.getPathGif();
 
+
+
         getWindow().setFormat(PixelFormat.UNKNOWN);
 
 
@@ -74,20 +76,18 @@ public class GifBoardActivity extends AppCompatActivity {
         videoToSoundMap.put(R.raw.thanks,R.raw.thanks_sound);
 
         final Map<Integer, Integer> videoToImage = new HashMap<Integer, Integer>();
-        videoToSoundMap.put(R.raw.agree,R.drawable.agree_pic);
-        videoToSoundMap.put(R.raw.byebye,R.drawable.byebye_pic);
-        videoToSoundMap.put(R.raw.disagree,R.drawable.disagree_pic);
-        videoToSoundMap.put(R.raw.drink_coke,R.drawable.drink_coke_pic);
-        videoToSoundMap.put(R.raw.drink_tea,R.drawable.drink_tea_pic);
-        videoToSoundMap.put(R.raw.drink_water,R.drawable.drink_water_pic);
-        videoToSoundMap.put(R.raw.eat_bamba,R.drawable.eat_bamba_pic);
-        videoToSoundMap.put(R.raw.eat_sandwich,R.drawable.eat_sandwich_pic);
-        videoToSoundMap.put(R.raw.hello,R.drawable.hello_pic);
-        videoToSoundMap.put(R.raw.me,R.drawable.me_pic);
-        videoToSoundMap.put(R.raw.music,R.drawable.music_pic);
-        videoToSoundMap.put(R.raw.thanks,R.drawable.thanks_pic);
-
-
+        videoToImage.put(R.raw.agree,R.drawable.agree_pic);
+        videoToImage.put(R.raw.byebye,R.drawable.byebye_pic);
+        videoToImage.put(R.raw.disagree,R.drawable.disagree_pic);
+        videoToImage.put(R.raw.drink_coke,R.drawable.drink_coke_pic);
+        videoToImage.put(R.raw.drink_tea,R.drawable.drink_tea_pic);
+        videoToImage.put(R.raw.drink_water,R.drawable.drink_water_pic);
+        videoToImage.put(R.raw.eat_bamba,R.drawable.eat_bamba_pic);
+        videoToImage.put(R.raw.eat_sandwich,R.drawable.eat_sandwich_pic);
+        videoToImage.put(R.raw.hello,R.drawable.hello_pic);
+        videoToImage.put(R.raw.me,R.drawable.me_pic);
+        videoToImage.put(R.raw.music,R.drawable.music_pic);
+        videoToImage.put(R.raw.thanks,R.drawable.thanks_pic);
 
 
 
@@ -108,7 +108,7 @@ public class GifBoardActivity extends AppCompatActivity {
         for(int i = 0; i<childVideoList.size() && i<LIMIT;i++)
         {
             //Set Buttons
-            buttons[i].setBackground(getDrawable(Integer.parseInt(childVideoList.get(i))));
+            buttons[i].setBackground(getDrawable(videoToImage.get(Integer.parseInt(childVideoList.get(i)))));
 
             VideoView v = (VideoView)findViewById(frameArr[i]);
             String uriPath = "android.resource://com.gifmyneeds/" + childVideoList.get(i);
@@ -146,7 +146,7 @@ public class GifBoardActivity extends AppCompatActivity {
                 v2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mp) {
-                        buttonPlayVideo1.setBackground(getDrawable(Integer.parseInt(childVideoList.get(0))));
+                        buttonPlayVideo1.setBackground(getDrawable(videoToImage.get(Integer.parseInt(childVideoList.get(0)))));
                     }
                 });
 
@@ -177,7 +177,7 @@ public class GifBoardActivity extends AppCompatActivity {
                 v2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mp) {
-                        buttonPlayVideo1.setBackground(getDrawable(Integer.parseInt(childVideoList.get(1))));
+                        buttonPlayVideo2.setBackground(getDrawable(videoToImage.get(Integer.parseInt(childVideoList.get(1)))));
                     }
                 });
 
@@ -188,6 +188,8 @@ public class GifBoardActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+
+                buttonPlayVideo3.setBackgroundColor(Color.TRANSPARENT);
 
                 VideoView v2 = (VideoView) findViewById(frameThree);
                 if(childVideoList.size()>2 && Integer.parseInt(childVideoList.get(2)) != 0){
@@ -202,6 +204,13 @@ public class GifBoardActivity extends AppCompatActivity {
                     v2.start();
                 }
 
+                v2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        buttonPlayVideo3.setBackground(getDrawable(videoToImage.get(Integer.parseInt(childVideoList.get(2)))));
+                    }
+                });
+
             }
         });
 
@@ -209,6 +218,8 @@ public class GifBoardActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+
+                buttonPlayVideo4.setBackgroundColor(Color.TRANSPARENT);
 
                 VideoView v2 = (VideoView) findViewById(frameFour);
 
@@ -224,6 +235,13 @@ public class GifBoardActivity extends AppCompatActivity {
                     v2.start();
                 }
 
+                v2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        buttonPlayVideo4.setBackground(getDrawable(videoToImage.get(Integer.parseInt(childVideoList.get(3)))));
+                    }
+                });
+
             }
         });
 
@@ -231,6 +249,7 @@ public class GifBoardActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                buttonPlayVideo5.setBackgroundColor(Color.TRANSPARENT);
 
                 VideoView v2 = (VideoView) findViewById(frameFive);
                 if(childVideoList.size()>4 && Integer.parseInt(childVideoList.get(4)) != 0) {
@@ -245,6 +264,13 @@ public class GifBoardActivity extends AppCompatActivity {
                     v2.start();
                 }
 
+                v2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        buttonPlayVideo5.setBackground(getDrawable(videoToImage.get(Integer.parseInt(childVideoList.get(4)))));
+                    }
+                });
+
             }
         });
 
@@ -252,6 +278,8 @@ public class GifBoardActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+
+                buttonPlayVideo6.setBackgroundColor(Color.TRANSPARENT);
 
                 VideoView v2 = (VideoView) findViewById(frameSix);
                 if(childVideoList.size()>5 && Integer.parseInt(childVideoList.get(5)) != 0) {
@@ -265,6 +293,13 @@ public class GifBoardActivity extends AppCompatActivity {
                     v2.requestFocus();
                     v2.start();
                 }
+
+                v2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        buttonPlayVideo6.setBackground(getDrawable(videoToImage.get(Integer.parseInt(childVideoList.get(5)))));
+                    }
+                });
 
             }
         });
