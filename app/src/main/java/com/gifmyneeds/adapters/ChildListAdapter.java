@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.gifmyneeds.R;
 
 import com.gifmyneeds.models.Child;
+import com.gifmyneeds.models.User;
 
 import java.util.ArrayList;
 
@@ -26,7 +27,7 @@ public class ChildListAdapter extends ArrayAdapter<Child> implements Filterable 
     private Context mContext;
     private int mResource;
     private int lastPosition = -1;
-
+    private User parentOfCild;
     private ArrayList<Child> childsArrayList;
     private ArrayList<Child> orig;
      /**
@@ -42,11 +43,12 @@ public class ChildListAdapter extends ArrayAdapter<Child> implements Filterable 
     /**
      * Default constructor for the ChildListAdapter
      */
-    public ChildListAdapter(Context context, int resource, ArrayList<Child> objects) {
+    public ChildListAdapter(Context context, int resource, ArrayList<Child> objects, User parentOfCild) {
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
         childsArrayList = objects;
+        this.parentOfCild = parentOfCild;
     }
 
     @NonNull
@@ -61,7 +63,7 @@ public class ChildListAdapter extends ArrayAdapter<Child> implements Filterable 
         //Create the child object with the information
         Child child = null;
         try {
-            child = new Child(id,name,gender,age);
+            child = new Child(id,name,gender,age, parentOfCild.getEmail());
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,25 +1,25 @@
 package com.gifmyneeds.activities;
 
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.gifmyneeds.R;
-import com.gifmyneeds.activities.user.SelectCategoryForBoardActivity;
+import com.gifmyneeds.activities.menus.ChildListActivity;
+import com.gifmyneeds.activities.user.SignUpActivity;
+import com.gifmyneeds.database.UserDBApi;
+import com.gifmyneeds.models.User;
+import com.gifmyneeds.utilities.Validations;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-
-    private Button signinBtn;
-    private Button signupBtn;
-    private EditText userName;
+    private Button signInBtn;
+    private Button signUpBtn;
+    private EditText email;
     private EditText userPassword;
     private ProgressDialog progressDialog;
 
@@ -28,85 +28,66 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        signinBtn = (Button) findViewById(R.id.signinBtn);
-        signupBtn = (Button) findViewById(R.id.signupBtn);
-        userName = (EditText) findViewById(R.id.userName);
+        signInBtn = (Button) findViewById(R.id.signInBtn);
+        signUpBtn = (Button) findViewById(R.id.signupBtn);
+        email = (EditText) findViewById(R.id.email);
         userPassword = (EditText) findViewById(R.id.userPassword);
         progressDialog = new ProgressDialog(this);
 
 
-        signinBtn.setOnClickListener(this);
-        signupBtn.setOnClickListener(this);
+        signInBtn.setOnClickListener(this);
+        signUpBtn.setOnClickListener(this);
 
     }
 
-
-    public final boolean isValidPassword(CharSequence target) {
-        if(TextUtils.isEmpty(target)){
-            Toast.makeText(this,R.string.enter_password, Toast.LENGTH_LONG).show();
-            return false;
-        }
-        if(target.length() < 8){
-            Toast.makeText(this,R.string.password_too_short , Toast.LENGTH_LONG).show();
-            return false;
-        }
-        return true;
-
-    }
-
-
-    public final boolean isValidEmail(CharSequence target) {
-        if(TextUtils.isEmpty(target)){
-            Toast.makeText(this,R.string.enter_email, Toast.LENGTH_LONG).show();
-            return false;
-        }
-        if(!android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches()) {
-            Toast.makeText(this,R.string.email_not_valid, Toast.LENGTH_LONG).show();
-            return false;
-        };
-
-        return true;
-    }
-
-
-    private void userLogin( String email ,String password ){
-
-
-        //Checking if email and password are valid
-
-        if(!isValidPassword(password)) {
-            isValidEmail(email);
-            return ;
-        }
-
-        if(!isValidEmail(email)){
-            isValidPassword(password);
-            return ;
-        };
-
-
+    private void userLogin(String email ,String password){
         progressDialog.setMessage(getResources().getString(R.string.checking_user_details));
         progressDialog.show();
 
-        //TODO Search for user name and password in data base, Encrypt password with SHA
+        //Checking if email and password are valid
+        boolean valid = true;
 
+        if(!Validations.isPasswordValid(password)) {
+            valid = false;
+        }
 
+        if(!Validations.isEmailValid(email)){
+            valid = false;
+        }
 
+        if (!valid) {
+            Toast.makeText(this,R.string.email_not_valid, Toast.LENGTH_LONG).show();
+            progressDialog.dismiss();
+            return;
+        }
+
+        User loginUser = UserDBApi.getUserByEmail(this, email);
+        if (loginUser == null) {
+            Toast.makeText(this, getString(R.string.user_name_not_exist), Toast.LENGTH_LONG).show();
+            progressDialog.dismiss();
+            return;
+        }
+
+        //TODO Encrypt password with SHA
+
+        Intent intent = new Intent(MainActivity.this, ChildListActivity.class);
+        intent.putExtra("loginUser", loginUser);
+        startActivity(intent);
+        finish();
     }
 
     @Override
     public void onClick(View view){
-        if(view == signinBtn){
-            String email = userName.getText().toString().trim();
+        if(view == signInBtn){
+            String email = this.email.getText().toString().trim();
             String password = userPassword.getText().toString().trim();
             userLogin(email ,password);
         }
 
-        if(view == signupBtn )
+        if(view == signUpBtn)
         {
-            //TODO move to sign up activity
+            startActivity(new Intent(MainActivity.this, SignUpActivity.class));
         }
-
     }
 }
 

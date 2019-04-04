@@ -25,7 +25,7 @@
     <string name="enter_email">אנא הזן מייל</string>
     <string name="email_not_valid">המייל שהזנת לא חוקי</string>
     <string name="checking_user_details">בודק פרטי משתמש אנא המתן...</string>
-    <string name="enter_username">אנא הכנס שם משתמש</string>
+    <string name="enter_email_login">אנא הכנס כתובת מייל</string>
     <string name="login">התחברות</string>
     <string name="signup">הרשמה</string>
     <string name="sign_up_here">אין לך משתמש עדיין? הירשם כאן!</string>
@@ -38,6 +38,18 @@
     <string name="no_selected_child">לא נבחר ילד</string>
     <string name="edit_child_board">ערוך לוח פרטי</string>
     <string name="personal_board">הצג לוח פרטי</string>
+    <string name="user_name_not_exist">המשתמש אינו קיים</string>
+    <string name="enter_full_name">הזן שם מלא</string>
+    <string name="create_account">צור חשבון</string>
+    <string name="already_a_member_login">יש לך כבר חשבון? לחץ כאן</string>
+    <string name="creating_account">יוצר חשבון</string>
+    <string name="uncorrect_email">כתובת המייל לא תקינה</string>
+    <string name="uncorrect_name">שם לא תקין</string>
+    <string name="uncorrect_password">סיסמה לא תקינה</string>
+    <string name="sign_up_failed">ההתחברות נכשלה</string>
+    <string name="incorrect_age">גיל לא תקין</string>
+    <string name="incorrect_id">תעודת זהות לא תקינה</string>
+    <string name="error_while_add_new_child">אירעה שגיאה בזמן הוספת הילד</string>
     <string-array name="genderList">
         <item>זכר</item>
         <item>נקבה</item>
