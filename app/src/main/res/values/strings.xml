@@ -4,7 +4,10 @@
     <string name="next">הבא</string>
     <string name="enter_category_text">בחר קטגוריה</string>
     <string name="choose_gif_text">בחר GIF</string>
-    <string name="previous">הקודם</string>
+    <string name="your_categories_text">הקטגוריות שלך:</string>
+    <string name="add_category">הוסף קטגוריה</string>
+    <string name="add_category_to_add">בחר קטגוריה להוספה:</string>
+    <string name="previous">חזור לקטגוריות שלך</string>
     <string name="end_quiz">סיים ושלח</string>
     <string name="name">שם:</string>
     <string name="ID">ת.ז.:</string>
@@ -42,6 +45,17 @@
     <string name="edit_child_board">ערוך לוח פרטי</string>
     <string name="personal_board">הצג לוח פרטי</string>
     <string name="user_name_not_exist">המשתמש אינו קיים</string>
+    <string name="enter_full_name">הזן שם מלא</string>
+    <string name="create_account">צור חשבון</string>
+    <string name="already_a_member_login">יש לך כבר חשבון? לחץ כאן</string>
+    <string name="creating_account">יוצר חשבון</string>
+    <string name="uncorrect_email">כתובת המייל לא תקינה</string>
+    <string name="uncorrect_name">שם לא תקין</string>
+    <string name="uncorrect_password">סיסמה לא תקינה</string>
+    <string name="sign_up_failed">ההתחברות נכשלה</string>
+    <string name="incorrect_age">גיל לא תקין</string>
+    <string name="incorrect_id">תעודת זהות לא תקינה</string>
+    <string name="error_while_add_new_child">אירעה שגיאה בזמן הוספת הילד</string>
     <string-array name="genderList">
         <item>זכר</item>
         <item>נקבה</item>

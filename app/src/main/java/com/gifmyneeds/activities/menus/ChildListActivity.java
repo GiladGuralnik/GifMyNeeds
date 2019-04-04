@@ -17,22 +17,26 @@ import com.gifmyneeds.activities.child.AddChildActivity;
 import com.gifmyneeds.activities.user.SelectCategoryForBoardActivity;
 import com.gifmyneeds.adapters.ChildListAdapter;
 
+import com.gifmyneeds.database.ChildDBApi;
 import com.gifmyneeds.models.Child;
+import com.gifmyneeds.models.User;
 
 import java.util.ArrayList;
+import java.util.List;
 
-    public class ChildListActivity extends AppCompatActivity implements SearchView.OnQueryTextListener,View.OnClickListener {
+public class ChildListActivity extends AppCompatActivity implements SearchView.OnQueryTextListener,View.OnClickListener {
 
-        private static final String TAG = "Main";
+        private static final String TAG = "ChildListActivity";
         static final int REQUEST_ADDCHILD = 0;
 
-        private ArrayList<Child> childsList;    //TODO get the list from parent
+        private ArrayList<Child> childsList;
         private ChildListAdapter adapter;
         private Button btnAddChild,btnSeleChild;
 
         private ListView childListView;
         private SearchView childSearchView;
         private Child selectedChild;
+        private User userLogin;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +53,11 @@ import java.util.ArrayList;
             childListView.setTextFilterEnabled(true);
             childListView.setAdapter(adapter);
 
+            Intent incomingIntent = getIntent();
+            userLogin = (User) incomingIntent.getSerializableExtra("loginUser");
+
             childsList = new ArrayList<>();
-            adapter = new ChildListAdapter(this, R.layout.adapter_view_child_list_layout, childsList);
+            adapter = new ChildListAdapter(this, R.layout.adapter_view_child_list_layout, childsList, userLogin);
 
 
             childListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -62,11 +69,6 @@ import java.util.ArrayList;
                 }
             });
 
-////check/////////
-            //Intent i = getIntent();
-            //Person dene = (Person)i.getSerializableExtra("Person");
-            //Log.d(TAG,dene.getName());
-/////////////////
             addChild();
 
             setupSearchView();
@@ -94,7 +96,7 @@ import java.util.ArrayList;
         @Override
         protected void onResume() {
             super.onResume();
-            ChildListAdapter adapter = new ChildListAdapter(this, R.layout.adapter_view_child_list_layout, childsList);
+            ChildListAdapter adapter = new ChildListAdapter(this, R.layout.adapter_view_child_list_layout, childsList, userLogin);
             childListView.setAdapter(adapter);
         }
 
@@ -112,7 +114,9 @@ import java.util.ArrayList;
         public void onClick(View view) {
             switch(view.getId()) {
                 case R.id.btnAddChild:
-                    startActivityForResult(new Intent(ChildListActivity.this, AddChildActivity.class), REQUEST_ADDCHILD);
+                    Intent intent = new Intent(ChildListActivity.this, AddChildActivity.class);
+                    intent.putExtra("parent", userLogin);
+                    startActivityForResult(intent, REQUEST_ADDCHILD);
                     break;
 
                 case R.id.btnSelectChild:
@@ -147,29 +151,15 @@ import java.util.ArrayList;
         }
 
         private void addChild(){
-            ///////////////////for check/////////////////////
-            Child john = null;
-            Child ron = null;
-            Child mira = null;
-            Child dana = null;
-            Child mike = null;
-            try {
-                john = new Child("1234","John", "5", "זכר");
-                ron = new Child("4321","Ron", "8", "זכר");
-                mira = new Child("1122","Mira", "3", "נקבה");
-                dana = new Child("1232","Dana", "2", "נקבה");
-                mike = new Child("2233","Mike", "8", "זכר");
-
-                childsList.add(john);
-                childsList.add(ron);
-                childsList.add(mira);
-                childsList.add(dana);
-                childsList.add(mike);
-            } catch (Exception e) {
-                e.printStackTrace();
+            Log.d(TAG, "addChild: add child function");
+            List<Child> l = ChildDBApi.getChildrenOfParent(this, userLogin.getEmail());
+            if (l != null) {
+                Log.d(TAG, "addChild: " + l.toString());
+                childsList = new ArrayList<>(l);
             }
-            ///////////////////////////////////////////////
-            //TODO add childs of the appropriate father from database to childsList
+            else {
+                Log.d(TAG, "addChild: NULL!!!!!!!!!!!!!");
+                childsList = new ArrayList<>();
+            }
         }
-
     }

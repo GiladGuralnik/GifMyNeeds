@@ -28,6 +28,7 @@ public class SelectCategoryForBoardActivity extends AppCompatActivity {
     private SharedPreferences table_childes_gif;
     private String child_id;
     private ArrayList<String> category_list;
+    private static int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,39 +41,43 @@ public class SelectCategoryForBoardActivity extends AppCompatActivity {
         table_childes_gif = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         category_list = new ArrayList<String>();
 
-        String[] array = {"bla1", "bla2", "bla3"};
+        if(count == 0)
+        {
+            String[] array = {"bla1", "bla2", "bla3"};
 
-        ArrayList<String> lst = new ArrayList<String>(Arrays.asList(array));
+            ArrayList<String> lst = new ArrayList<String>(Arrays.asList(array));
 
-        child_id = "1234";
+            child_id = "1234";
 
-        List<ChildGifs> testList= new ArrayList<ChildGifs>();
+            List<ChildGifs> testList= new ArrayList<ChildGifs>();
 
-        ChildGifs obj = new ChildGifs(child_id, "אוכל", lst);
-        ChildGifs obj1 = new ChildGifs(child_id, "תחביבים", lst);
+            ChildGifs obj = new ChildGifs(child_id, "אוכל", lst);
+            ChildGifs obj1 = new ChildGifs(child_id, "שתייה", lst);
 
-        testList.add(obj);
-        testList.add(obj1);
+            testList.add(obj);
+            testList.add(obj1);
 
-        Gson gson = new Gson();
-        String json = gson.toJson(testList);
+            Gson gson = new Gson();
+            String json = gson.toJson(testList);
 
-        SharedPreferences.Editor editor = table_childes_gif.edit();
+            SharedPreferences.Editor editor = table_childes_gif.edit();
 
-        //editor.clear();
+            //editor.clear();
 
-        editor.putString(child_id, json);
+            editor.putString(child_id, json);
 
-        editor.commit();
+            editor.commit();
+            count++;
+        }
 
 
         // get child id from previous activity
-//        Intent intent= getIntent();
-//        Bundle bundle  = intent.getExtras();
-//
-//        if(bundle != null){
-//            child_id = bundle.getString("id");
-//        }
+        Intent intent= getIntent();
+        Bundle bundle  = intent.getExtras();
+
+        if(bundle != null){
+            child_id = bundle.getString("child_id");
+        }
 
         showSpinnerOfCategories();
         addListenerOnButtonAdd();

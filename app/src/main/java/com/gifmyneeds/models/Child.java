@@ -2,6 +2,7 @@ package com.gifmyneeds.models;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
@@ -24,11 +25,16 @@ public class Child implements Serializable {
     @ColumnInfo(name = "gender")
     private String gender;
 
-    public Child(String id, String fullName, String age, String gender) {
+    @ColumnInfo(name = "parent_email")
+    @ForeignKey(entity = User.class, parentColumns = "email", childColumns = "parent_email")
+    private String parentEmail;
+
+    public Child(String id, String fullName, String age, String gender, String parentEmail) {
         this.id = id;
         this.fullName = fullName;
         this.age = age;
         this.gender = gender;
+        this.parentEmail = parentEmail;
     }
 
     @NonNull
@@ -48,6 +54,10 @@ public class Child implements Serializable {
         return gender;
     }
 
+    public String getParentEmail() {
+        return parentEmail;
+    }
+
     public void setId(String id) {
         this.id = id;
     }
@@ -62,6 +72,10 @@ public class Child implements Serializable {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public void setParentEmail(String parentEmail) {
+        this.parentEmail = parentEmail;
     }
 
     @NonNull

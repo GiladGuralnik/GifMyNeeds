@@ -27,7 +27,8 @@
         <activity android:name=".activities.child.GifBoardActivity" />
         <activity android:name=".activities.menus.ChildListActivity" />
         <activity android:name=".activities.user.SelectCategoryForBoardActivity" />
-        <activity android:name=".activities.user.SelectGifsForBoardActivity" />
+        <activity android:name=".activities.user.SelectGifsForBoardActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".activities.user.SignUpActivity" />
         <activity android:name=".activities.menus.ChildMenuActivity" />
     </application>

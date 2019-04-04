@@ -2,7 +2,8 @@
 <resources>
     <string-array name="categories">
         <item name="food_category">אוכל</item>
-        <item>שתיה</item>
-        <item>מוזיקה</item>
+        <item name="drink_category">שתיה</item>
+        <item name="music_category">בידור</item>
+        <item name="music_category">ברכות</item>
     </string-array>
 </resources>
