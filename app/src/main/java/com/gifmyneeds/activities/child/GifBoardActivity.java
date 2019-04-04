@@ -1,6 +1,7 @@
 package com.gifmyneeds.activities.child;
 
 import android.graphics.PixelFormat;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +10,10 @@ import android.widget.Button;
 import android.widget.VideoView;
 
 import com.gifmyneeds.R;
+import com.gifmyneeds.activities.MainActivity;
 
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class GifBoardActivity extends AppCompatActivity {
@@ -33,15 +37,21 @@ public class GifBoardActivity extends AppCompatActivity {
         Button buttonPlayVideo5 = (Button)findViewById(R.id.buttonVideo5);
         Button buttonPlayVideo6 = (Button)findViewById(R.id.buttonVideo6);
 
-        //Buttons Array
-        Button[] buttons = new Button[6];
-        buttons[0] = buttonPlayVideo1;
-        buttons[1] = buttonPlayVideo2;
-        buttons[2] = buttonPlayVideo3;
-        buttons[3] = buttonPlayVideo4;
-        buttons[4] = buttonPlayVideo5;
-        buttons[5] = buttonPlayVideo6;
 
+        //Local Database (Dictionary) to connect between each video file and its matching sound.
+        final Map<Integer, Integer> videoToSoundMap = new HashMap<Integer, Integer>();
+        videoToSoundMap.put(R.raw.agree,R.raw.agree_sound);
+        videoToSoundMap.put(R.raw.byebye,R.raw.byebye_sound);
+        videoToSoundMap.put(R.raw.disagree,R.raw.disagree_sound);
+        videoToSoundMap.put(R.raw.drink_coke,R.raw.drink_coke_sound);
+        videoToSoundMap.put(R.raw.drink_tea,R.raw.drink_tea_sound);
+        videoToSoundMap.put(R.raw.drink_water,R.raw.drink_water_sound);
+        videoToSoundMap.put(R.raw.eat_bamba,R.raw.eat_bamba_sound);
+        videoToSoundMap.put(R.raw.eat_sandwich,R.raw.eat_sandwich_sound);
+        videoToSoundMap.put(R.raw.hello,R.raw.hello_sound);
+        videoToSoundMap.put(R.raw.me,R.raw.me_sound);
+        videoToSoundMap.put(R.raw.music,R.raw.music_sound);
+        videoToSoundMap.put(R.raw.thanks,R.raw.thanks_sound);
 
 
         //TESTS TETSTSTST TETSTS
@@ -91,8 +101,12 @@ public class GifBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 VideoView v2 = (VideoView) findViewById(frameOne);
                 if(arr.length>0 && arr[0] != 0) {
+
+                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[0]));
+                    mp.start();
                     String uriPath = "android.resource://com.gifmyneeds/" + arr[0];
                     Uri uri2 = Uri.parse(uriPath);
                     v2.setVideoURI(uri2);
@@ -110,6 +124,9 @@ public class GifBoardActivity extends AppCompatActivity {
 
                 VideoView v2 = (VideoView) findViewById(frameTwo);
                 if(arr.length>1 && arr[1] != 0) {
+
+                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[1]));
+                    mp.start();
                     String uriPath = "android.resource://com.gifmyneeds/" + arr[1];
                     Uri uri2 = Uri.parse(uriPath);
                     v2.setVideoURI(uri2);
@@ -127,6 +144,9 @@ public class GifBoardActivity extends AppCompatActivity {
 
                 VideoView v2 = (VideoView) findViewById(frameThree);
                 if(arr.length>2 && arr[2] != 0){
+
+                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[2]));
+                    mp.start();
                     String uriPath = "android.resource://com.gifmyneeds/" + arr[2];
                     Uri uri2 = Uri.parse(uriPath);
                     v2.setVideoURI(uri2);
@@ -145,6 +165,9 @@ public class GifBoardActivity extends AppCompatActivity {
                 VideoView v2 = (VideoView) findViewById(frameFour);
 
                 if(arr.length>3 && arr[3] != 0) {
+
+                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[3]));
+                    mp.start();
                     String uriPath = "android.resource://com.gifmyneeds/" + arr[3];
                     Uri uri2 = Uri.parse(uriPath);
                     v2.setVideoURI(uri2);
@@ -162,6 +185,9 @@ public class GifBoardActivity extends AppCompatActivity {
 
                 VideoView v2 = (VideoView) findViewById(frameFive);
                 if(arr.length>4 && arr[4] != 0) {
+
+                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[4]));
+                    mp.start();
                     String uriPath = "android.resource://com.gifmyneeds/" + arr[4];
                     Uri uri2 = Uri.parse(uriPath);
                     v2.setVideoURI(uri2);
@@ -179,6 +205,9 @@ public class GifBoardActivity extends AppCompatActivity {
 
                 VideoView v2 = (VideoView) findViewById(frameSix);
                 if(arr.length>5 && arr[5] != 0) {
+
+                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(),videoToSoundMap.get(arr[5]));
+                    mp.start();
                     String uriPath = "android.resource://com.gifmyneeds/" + arr[5];
                     Uri uri2 = Uri.parse(uriPath);
                     v2.setVideoURI(uri2);

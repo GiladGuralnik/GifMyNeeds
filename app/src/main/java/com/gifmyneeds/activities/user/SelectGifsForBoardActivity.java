@@ -5,6 +5,7 @@ import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.VideoView;
@@ -31,12 +32,24 @@ public class SelectGifsForBoardActivity extends AppCompatActivity implements Vie
         Button buttonPlayVideo1 = (Button)findViewById(R.id.button_Video1_1);
         Button buttonPlayVideo2 = (Button)findViewById(R.id.button_Video1_2);
 
+        buttonPlayVideo1.setOnClickListener(this);
+        buttonPlayVideo2.setOnClickListener(this);
+
         VideoView video1 = (VideoView)findViewById(R.id.video_View1_1);
         String uriPath = "android.resource://com.gifmyneeds/" + R.raw.agree;
         Uri uri2 = Uri.parse(uriPath);
         video1.setVideoURI(uri2);
         video1.requestFocus();
-        video1.start();
+        video1.seekTo(1);
+        //video1.start();
+
+        VideoView video2 = (VideoView)findViewById(R.id.video_View1_2);
+        uriPath = "android.resource://com.gifmyneeds/" + R.raw.byebye;
+        uri2 = Uri.parse(uriPath);
+        video2.setVideoURI(uri2);
+        video2.requestFocus();
+        video2.seekTo(1);
+        //v2.start();
 
 
 //        Intent intent = new Intent(SelectCategoryForBoardActivity.this,
@@ -44,10 +57,10 @@ public class SelectGifsForBoardActivity extends AppCompatActivity implements Vie
 //        intent.putExtra("key", "value");
 //        startActivity(intent);
         //String value = incomingIntent.getStringExtra("key");
-        Intent incomingIntent = getIntent();
+        //Intent incomingIntent = getIntent();
 
-        childGifs = (ChildGifs) incomingIntent.getSerializableExtra("child_gif");
-        getGifsByCategory(childGifs.getCategory());
+        //childGifs = (ChildGifs) incomingIntent.getSerializableExtra("child_gif");
+        //getGifsByCategory(childGifs.getCategory());
 
     }
 
@@ -60,26 +73,31 @@ public class SelectGifsForBoardActivity extends AppCompatActivity implements Vie
     public void onClick(View view) {
         String uriPath;
         Uri uri2;
+        VideoView video;
         switch(view.getId()) {
             case R.id.button_Video1_1:
-                VideoView v1 = (VideoView)findViewById(R.id.videoView1);
+                video = (VideoView)findViewById(R.id.video_View1_1);
                 uriPath = "android.resource://com.gifmyneeds/" + R.raw.agree;
                 uri2 = Uri.parse(uriPath);
-                v1.setVideoURI(uri2);
-                v1.requestFocus();
-                v1.start();
+                video.setVideoURI(uri2);
+                video.requestFocus();
+                video.start();
+                //video.getDuration();
+                //video.seekTo();//no need
                 break;
 
             case R.id.button_Video1_2:
-                VideoView v2 = (VideoView)findViewById(R.id.videoView1);
+                VideoView v2 = (VideoView)findViewById(R.id.video_View1_2);
                 uriPath = "android.resource://com.gifmyneeds/" + R.raw.byebye;
                 uri2 = Uri.parse(uriPath);
                 v2.setVideoURI(uri2);
                 v2.requestFocus();
                 v2.start();
+                //v2.seekTo(1);
                 break;
 
         }
 
     }
+
 }
