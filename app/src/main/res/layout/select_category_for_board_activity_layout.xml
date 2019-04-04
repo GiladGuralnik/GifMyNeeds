@@ -12,6 +12,14 @@
         android:layout_height="match_parent"
         android:layoutDirection="rtl">
 
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_gravity="left"
+            android:layout_marginBottom="50dp"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,17 +32,17 @@
             android:layout_height="50dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="126dp"
+            android:layout_marginBottom="50dp"
             android:id="@+id/categorySpinner">
 
         </Spinner >
 
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_gravity="left"
-            app:srcCompat="@android:drawable/ic_input_add" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/choose_gif_text"
+            android:id="@+id/choose_gif"/>
 
     </LinearLayout>
 </RelativeLayout>
