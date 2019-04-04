@@ -117,8 +117,10 @@ import java.util.ArrayList;
 
                 case R.id.btnSelectChild:
                     if (selectedChild!=null) {
-                        //TODO send selectedChild object to next activity
-                        //finish();
+                        Intent i = new Intent(ChildListActivity.this, ChildMenuActivity.class);
+                        i.putExtra("id",selectedChild.getId());
+                        startActivity(i);
+                        finish();
                     }
                     else
                         Toast.makeText(this,R.string.no_selected_child, Toast.LENGTH_LONG).show();
@@ -128,6 +130,7 @@ import java.util.ArrayList;
                         Intent i = new Intent(ChildListActivity.this, SelectCategoryForBoardActivity.class);
                         i.putExtra("id",selectedChild.getId());
                         startActivity(i);
+                        finish();
                     }
                     else
                         Toast.makeText(this,R.string.no_selected_child, Toast.LENGTH_LONG).show();
