@@ -21,7 +21,7 @@ public class SelectGifsForBoardActivity extends AppCompatActivity implements Vie
 
     private ArrayList<String> allVideo ;
     private ArrayList<String> str = new ArrayList<String>();
-    private  ChildGifs childGifs= new ChildGifs("1234","eat",str);
+    private  ChildGifs childGifs;
 
     private static final String TAG = "SelectGifsForBoardActiv";
 
@@ -30,11 +30,14 @@ public class SelectGifsForBoardActivity extends AppCompatActivity implements Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_gifs_for_board_activity_layout);
 
-        //Intent incomingIntent = getIntent();
-        //Bundle bundle = incomingIntent.getExtras();
-        //childGifs = (ChildGifs) incomingIntent.getSerializableExtra("child_gif");
+        Intent incomingIntent = getIntent();
+        Bundle bundle = incomingIntent.getExtras();
+        childGifs = (ChildGifs) incomingIntent.getSerializableExtra("child_gif");
 
-        //ArrayList<String> categoryVideos = getCategoryVideos(childGifs.getCategory());
+        childGifs.setPathGif(new ArrayList<String>());
+        new ChildGifs("1234","eat",str);
+
+
 
         getWindow().setFormat(PixelFormat.UNKNOWN);
 
@@ -508,7 +511,13 @@ public class SelectGifsForBoardActivity extends AppCompatActivity implements Vie
                 break;
             //-----------------------------------
             case R.id.SubmitButton:
-                //SENDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+                Intent intent = new Intent(SelectGifsForBoardActivity.this,
+                        SelectCategoryForBoardActivity.class);
+                intent.putExtra("child_gif", childGifs);
+                finish();
+                startActivity(intent);
+
+
                 break;
         }
 
