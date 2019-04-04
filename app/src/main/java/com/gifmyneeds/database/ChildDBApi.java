@@ -24,13 +24,15 @@ public class ChildDBApi {
         return null;
     }
 
-    public static void addNewChild(Context context, Child child) {
+    public static boolean addNewChild(Context context, Child child) {
         try {
             init(context);
             childDao.insertAll(child);
+            return true;
         }
         catch (Throwable e) {
             Toast.makeText(context, "Database Error", Toast.LENGTH_LONG).show();
+            return false;
         }
     }
 

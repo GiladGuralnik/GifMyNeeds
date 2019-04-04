@@ -25,13 +25,15 @@ public class UserDBApi {
         return null;
     }
 
-    public static void addNewUser(Context context, User user) {
+    public static boolean addNewUser(Context context, User user) {
         try {
             init(context);
             userDao.insertAll(user);
+            return true;
         }
         catch (Throwable e) {
             Toast.makeText(context, "Database Error", Toast.LENGTH_LONG).show();
+            return false;
         }
     }
 
