@@ -40,7 +40,7 @@ public class ChildMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.child_menu_activity_layout);
 
-        gridView = findViewById(R.id.gridview);
+        gridView = (GridView) findViewById(R.id.gridview);
         categories = new ArrayList<>();
         images = new ArrayList<>();
 

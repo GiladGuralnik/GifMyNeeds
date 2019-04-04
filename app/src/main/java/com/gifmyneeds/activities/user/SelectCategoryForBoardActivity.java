@@ -12,10 +12,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import com.gifmyneeds.R;
+import com.gifmyneeds.models.Child;
 import com.gifmyneeds.models.ChildGifs;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import com.gifmyneeds.utilities.SharedConstants;
 import com.google.gson.Gson;
 import android.widget.Toast;
@@ -47,7 +49,10 @@ public class SelectCategoryForBoardActivity extends AppCompatActivity {
 
             ArrayList<String> lst = new ArrayList<String>(Arrays.asList(array));
 
-            child_id = "1234";
+            Intent intent  = getIntent();
+            Child child = (Child) intent.getSerializableExtra("id");
+
+            child_id = child.getId();
 
             List<ChildGifs> testList= new ArrayList<ChildGifs>();
 

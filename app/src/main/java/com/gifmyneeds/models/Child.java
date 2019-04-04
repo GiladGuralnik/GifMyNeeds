@@ -26,7 +26,6 @@ public class Child implements Serializable {
     private String gender;
 
     @ColumnInfo(name = "parent_email")
-    @ForeignKey(entity = User.class, parentColumns = "email", childColumns = "parent_email")
     private String parentEmail;
 
     public Child(String id, String fullName, String age, String gender, String parentEmail) {
