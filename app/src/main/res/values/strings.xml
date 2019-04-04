@@ -4,7 +4,10 @@
     <string name="next">הבא</string>
     <string name="enter_category_text">בחר קטגוריה</string>
     <string name="choose_gif_text">בחר GIF</string>
-    <string name="previous">הקודם</string>
+    <string name="your_categories_text">הקטגוריות שלך:</string>
+    <string name="add_category">הוסף קטגוריה</string>
+    <string name="add_category_to_add">בחר קטגוריה להוספה:</string>
+    <string name="previous">חזור לקטגוריות שלך</string>
     <string name="end_quiz">סיים ושלח</string>
     <string name="name">שם:</string>
     <string name="ID">ת.ז.:</string>
