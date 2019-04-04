@@ -74,18 +74,18 @@ public class GifBoardActivity extends AppCompatActivity {
         videoToSoundMap.put(R.raw.thanks,R.raw.thanks_sound);
 
         final Map<Integer, Integer> videoToImage = new HashMap<Integer, Integer>();
-        videoToSoundMap.put(R.raw.agree,R.raw.agree_pic);
-        videoToSoundMap.put(R.raw.byebye,R.raw.byebye_pic);
-        videoToSoundMap.put(R.raw.disagree,R.raw.disagree_pic);
-        videoToSoundMap.put(R.raw.drink_coke,R.raw.drink_coke_pic);
-        videoToSoundMap.put(R.raw.drink_tea,R.raw.drink_tea_pic;
-        videoToSoundMap.put(R.raw.drink_water,R.raw.drink_water_pic);
-        videoToSoundMap.put(R.raw.eat_bamba,R.raw.eat_bamba_pic);
-        videoToSoundMap.put(R.raw.eat_sandwich,R.raw.eat_sandwich_pic);
-        videoToSoundMap.put(R.raw.hello,R.raw.hello_pic);
-        videoToSoundMap.put(R.raw.me,R.raw.me_pic);
-        videoToSoundMap.put(R.raw.music,R.raw.music_pic);
-        videoToSoundMap.put(R.raw.thanks,R.raw.thanks_pic);
+        videoToSoundMap.put(R.raw.agree,R.drawable.agree_pic);
+        videoToSoundMap.put(R.raw.byebye,R.drawable.byebye_pic);
+        videoToSoundMap.put(R.raw.disagree,R.drawable.disagree_pic);
+        videoToSoundMap.put(R.raw.drink_coke,R.drawable.drink_coke_pic);
+        videoToSoundMap.put(R.raw.drink_tea,R.drawable.drink_tea_pic);
+        videoToSoundMap.put(R.raw.drink_water,R.drawable.drink_water_pic);
+        videoToSoundMap.put(R.raw.eat_bamba,R.drawable.eat_bamba_pic);
+        videoToSoundMap.put(R.raw.eat_sandwich,R.drawable.eat_sandwich_pic);
+        videoToSoundMap.put(R.raw.hello,R.drawable.hello_pic);
+        videoToSoundMap.put(R.raw.me,R.drawable.me_pic);
+        videoToSoundMap.put(R.raw.music,R.drawable.music_pic);
+        videoToSoundMap.put(R.raw.thanks,R.drawable.thanks_pic);
 
 
 
