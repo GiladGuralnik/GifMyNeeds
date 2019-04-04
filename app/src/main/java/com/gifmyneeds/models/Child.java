@@ -29,11 +29,12 @@ public class Child implements Serializable {
     @ForeignKey(entity = User.class, parentColumns = "email", childColumns = "parent_email")
     private String parentEmail;
 
-    public Child(String id, String fullName, String age, String gender) {
+    public Child(String id, String fullName, String age, String gender, String parentEmail) {
         this.id = id;
         this.fullName = fullName;
         this.age = age;
         this.gender = gender;
+        this.parentEmail = parentEmail;
     }
 
     @NonNull
