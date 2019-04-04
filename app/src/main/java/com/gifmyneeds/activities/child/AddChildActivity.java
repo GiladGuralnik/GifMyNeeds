@@ -16,8 +16,10 @@ import com.gifmyneeds.models.Child;
 public class AddChildActivity extends AppCompatActivity implements View.OnClickListener{
         private EditText etName;
         private EditText etAge;
+        private EditText etID;
         private Spinner genderSpinner;
-        private Button btnSubChild;
+
+    private Button btnSubChild;
         private static final String TAG = "Main";
 
 
@@ -26,6 +28,7 @@ public class AddChildActivity extends AppCompatActivity implements View.OnClickL
             super.onCreate(savedInstanceState);
             setContentView(R.layout.add_child_activity_layout);
 
+            etID = (EditText) findViewById(R.id.etID);
             etName = (EditText) findViewById(R.id.etName);
             etAge = (EditText) findViewById(R.id.etAge);
             btnSubChild = (Button) findViewById(R.id.btnSubChild);
@@ -63,7 +66,9 @@ public class AddChildActivity extends AppCompatActivity implements View.OnClickL
                     String name = etName.getText().toString();
                     String gender = genderSpinner.getSelectedItem().toString();
                     String age = etAge.getText().toString();
-                    child = new Child(name, age, gender);
+                    String id = etID.getText().toString();
+
+                    child = new Child(id,name, age, gender);
 
                     //TODO add incomingChild object to child database
 

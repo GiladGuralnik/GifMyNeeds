@@ -36,7 +36,8 @@ public class ChildListAdapter extends ArrayAdapter<Child> implements Filterable 
         TextView name;
         TextView gender;
         TextView age;
-    }
+         TextView id;
+     }
 
     /**
      * Default constructor for the ChildListAdapter
@@ -55,11 +56,12 @@ public class ChildListAdapter extends ArrayAdapter<Child> implements Filterable 
         String name = getItem(position).getFullName();
         String gender = getItem(position).getGender();
         String age = getItem(position).getAge();
+        String id = getItem(position).getId();
 
         //Create the child object with the information
         Child child = null;
         try {
-            child = new Child(name,gender,age);
+            child = new Child(id,name,gender,age);
         } catch (Exception e) {
             e.printStackTrace();
         }
