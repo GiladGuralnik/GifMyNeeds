@@ -1,6 +1,8 @@
 package com.gifmyneeds.activities.child;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,8 +16,12 @@ import com.gifmyneeds.R;
 import com.gifmyneeds.activities.menus.ChildListActivity;
 import com.gifmyneeds.database.ChildDBApi;
 import com.gifmyneeds.models.Child;
+import com.gifmyneeds.models.ChildGifs;
 import com.gifmyneeds.models.User;
 import com.gifmyneeds.utilities.Validations;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
 
 
 public class AddChildActivity extends AppCompatActivity implements View.OnClickListener {
@@ -23,10 +29,11 @@ public class AddChildActivity extends AppCompatActivity implements View.OnClickL
     private EditText etAge;
     private EditText etID;
     private Spinner genderSpinner;
-
+    private SharedPreferences table_childes_gif;
     private Button btnSubChild;
     private static final String TAG = "Main";
-    private User parent;
+    private ArrayList<ChildGifs> list_gif;
+    User parent;
 
 
     @Override
@@ -39,7 +46,8 @@ public class AddChildActivity extends AppCompatActivity implements View.OnClickL
         etAge = (EditText) findViewById(R.id.etAge);
         btnSubChild = (Button) findViewById(R.id.btnSubChild);
         genderSpinner = (Spinner) findViewById(R.id.GenderSpinner);
-
+        table_childes_gif = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        list_gif = new ArrayList<ChildGifs>();
         Intent incomingIntent = getIntent();
         parent = (User) incomingIntent.getSerializableExtra("parent");
 
@@ -96,9 +104,19 @@ public class AddChildActivity extends AppCompatActivity implements View.OnClickL
             Toast.makeText(AddChildActivity.this, getString(R.string.error_while_add_new_child), Toast.LENGTH_LONG).show();
             return false;
         }
+
+        SharedPreferences.Editor prefsEditor = table_childes_gif.edit();
+        Gson gson = new Gson();
+        String jsonGifs = gson.toJson(list_gif);
+        prefsEditor.putString(id, jsonGifs);
+        prefsEditor.commit();
+
         Intent intent = new Intent(AddChildActivity.this, ChildListActivity.class);
         intent.putExtra("child", newChild);
         setResult(RESULT_OK, intent);
+
+
+
         return true;
     }
 }

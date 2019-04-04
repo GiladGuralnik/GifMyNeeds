@@ -69,12 +69,12 @@ public class AddNewCategoryActivity extends AppCompatActivity {
     public void showListViewOfExistsCategories(){
 
         //TODO check why function isExists not working
-
+        Log.d(TAG, "showListViewOfExistsCategories: enter the function");
         // if child exists in shared preference
         if(table_childes_gif.contains(child_id)){
-
+            Log.d(TAG, "showListViewOfExistsCategories: enter to if");
             List<ChildGifs> list_of_gif = SharedConstants.getChildGifsListFromSharedPreference(child_id, table_childes_gif);
-
+            Log.d(TAG, "showListViewOfExistsCategories: after shared preference");
             // take out all categories of child
             for (ChildGifs child_gifs : list_of_gif){
                 exists_category_list.add(child_gifs.getCategory());
@@ -182,6 +182,7 @@ public class AddNewCategoryActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                Log.d(TAG, "onClick: clickeddddddddddddddd");
                 addCategoryToChild(selected_category);
                 exists_category_list = new ArrayList<String>();
                 showListViewOfExistsCategories();

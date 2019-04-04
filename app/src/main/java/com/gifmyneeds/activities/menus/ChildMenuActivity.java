@@ -43,6 +43,7 @@ public class ChildMenuActivity extends AppCompatActivity {
         gridView = (GridView) findViewById(R.id.gridview);
         categories = new ArrayList<>();
         images = new ArrayList<>();
+        table_childes_gif = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
        //add();
 

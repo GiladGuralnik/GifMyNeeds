@@ -31,7 +31,7 @@ public class ChildListActivity extends AppCompatActivity implements SearchView.O
 
         private ArrayList<Child> childsList;
         private ChildListAdapter adapter;
-        private Button btnAddChild,btnSeleChild;
+        private Button btnAddChild,btnSeleChild, btnEditChild;
 
         private ListView childListView;
         private SearchView childSearchView;
@@ -47,9 +47,12 @@ public class ChildListActivity extends AppCompatActivity implements SearchView.O
             childSearchView = (SearchView) findViewById(R.id.searchView);
             btnAddChild = (Button) findViewById(R.id.btnAddChild);
             btnSeleChild = (Button) findViewById(R.id.btnSelectChild);
+            btnEditChild = (Button) findViewById(R.id.btnEditChildBoard);
+
 
             btnAddChild.setOnClickListener(this);
             btnSeleChild.setOnClickListener(this);
+            btnEditChild.setOnClickListener(this);
             childListView.setTextFilterEnabled(true);
             childListView.setAdapter(adapter);
 
@@ -57,6 +60,7 @@ public class ChildListActivity extends AppCompatActivity implements SearchView.O
             userLogin = (User) incomingIntent.getSerializableExtra("loginUser");
 
             childsList = new ArrayList<>();
+            addChild();
             adapter = new ChildListAdapter(this, R.layout.adapter_view_child_list_layout, childsList, userLogin);
 
 
@@ -69,7 +73,6 @@ public class ChildListActivity extends AppCompatActivity implements SearchView.O
                 }
             });
 
-            addChild();
 
             setupSearchView();
         }
@@ -132,7 +135,7 @@ public class ChildListActivity extends AppCompatActivity implements SearchView.O
                 case R.id.btnEditChildBoard:
                     if (selectedChild!=null) {
                         Intent i = new Intent(ChildListActivity.this, SelectCategoryForBoardActivity.class);
-                        i.putExtra("id",selectedChild.getId());
+                        i.putExtra("id",selectedChild);
                         startActivity(i);
                         finish();
                     }
